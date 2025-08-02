@@ -35,16 +35,22 @@ Write-Host ""
 # Stop existing containers
 docker-compose down 2>$null
 
-# Check if images exist
-$backendExists = docker images kansas-backend -q
-$frontendExists = docker images kansas-frontend -q
-
-if ($backendExists -and $frontendExists) {
-    Write-Host "[INFO] Using existing images (faster startup)" -ForegroundColor Cyan
-    docker-compose up -d
-} else {
-    Write-Host "[INFO] Building images (first run or after changes)" -ForegroundColor Cyan
+# Check for rebuild parameter
+if ($args -contains "--build" -or $args -contains "-b") {
+    Write-Host "[INFO] Force rebuilding images" -ForegroundColor Cyan
     docker-compose up --build -d
+} else {
+    # Check if images exist
+    $backendExists = docker images kansas-backend -q
+    $frontendExists = docker images kansas-frontend -q
+    
+    if ($backendExists -and $frontendExists) {
+        Write-Host "[INFO] Using existing images (add --build to force rebuild)" -ForegroundColor Cyan
+        docker-compose up -d
+    } else {
+        Write-Host "[INFO] Building images (first run)" -ForegroundColor Cyan
+        docker-compose up --build -d
+    }
 }
 
 Write-Host ""
