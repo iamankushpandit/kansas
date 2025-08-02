@@ -368,6 +368,7 @@ export default {
             'hc-key': this.getCountyCode(county.county),
             value: value,
             name: county.county,
+            fip: 'FIP: ' + this.getCountyCode(county.county).replace('us-ks-', ''),
             provider_count: county.provider_count,
             claims_count: county.claims_count,
             avg_claim_amount: county.avg_claim_amount,

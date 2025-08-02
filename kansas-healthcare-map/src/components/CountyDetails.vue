@@ -2,7 +2,7 @@
   <section class="mt-4" v-if="selectedCounty" aria-labelledby="county-details-title">
     <v-card variant="outlined" role="region">
       <v-card-title class="text-h6">
-        <h3 id="county-details-title">{{ selectedCounty.county }} County - Complete Details</h3>
+        <h3 id="county-details-title">{{ selectedCounty.county }} County (FIPS: {{ getFipsCode(selectedCounty.county) }}) - Complete Details</h3>
       </v-card-title>
       <v-card-text>
         <CountyMetrics 
@@ -28,6 +28,7 @@
 import CountyMetrics from './CountyMetrics.vue'
 import NetworkRecommendations from './NetworkRecommendations.vue'
 import SpecialtyDensityAnalysis from './SpecialtyDensityAnalysis.vue'
+import countyMapping from '../data/countyMapping.json'
 
 export default {
   name: 'CountyDetails',
@@ -41,6 +42,12 @@ export default {
     countyTerminatedAnalysis: Object,
     originalRecommendations: Array,
     specialtyDensityRecommendations: Array
+  },
+  methods: {
+    getFipsCode(countyName) {
+      const code = countyMapping[countyName]
+      return code ? code.replace('us-ks-', '') : 'N/A'
+    }
   }
 }
 </script>
