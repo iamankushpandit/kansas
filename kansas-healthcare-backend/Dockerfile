@@ -16,5 +16,5 @@ WORKDIR /root/
 COPY --from=builder /app/main .
 COPY --from=builder /app/data ./data
 
-EXPOSE 8080
+EXPOSE 3247
 CMD ["./main"]

@@ -66,8 +66,19 @@ export default {
   border: 0;
 }
 
+/* Accessibility-compliant focus indicator that doesn't overlap */
+.v-select {
+  margin-bottom: 8px; /* Add spacing between dropdowns */
+}
+
 .v-select:focus-within {
-  outline: 3px solid #1976d2;
-  outline-offset: 2px;
+  outline: 2px solid #1976d2;
+  outline-offset: 1px;
+  border-radius: 4px;
+}
+
+/* Ensure focus indicator doesn't extend beyond component bounds */
+.v-select :deep(.v-field--focused) {
+  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.3);
 }
 </style>

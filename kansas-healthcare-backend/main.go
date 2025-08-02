@@ -98,13 +98,17 @@ func main() {
 
 	// Health check endpoint for Kubernetes liveness/readiness probes
 	// Critical for zero-downtime healthcare service deployments
-	r.GET("/health", func(c *gin.Context) {
+	healthHandler := func(c *gin.Context) {
+		log.Printf("Health check accessed via %s", c.Request.Method)
 		c.JSON(http.StatusOK, gin.H{
 			"status": "healthy",
 			"timestamp": time.Now().UTC(),
 			"service": "kansas-healthcare-api",
 		})
-	})
+	}
+	r.GET("/health", healthHandler)
+	r.HEAD("/health", healthHandler)
+	log.Printf("Health endpoint registered at /health")
 
 	// RESTful API routes following healthcare interoperability standards
 	// Versioned API ensures backward compatibility for healthcare integrations
@@ -125,9 +129,14 @@ func main() {
 
 	port := cfg.Port
 	if port == "" {
-		port = "8080"
+		port = "3247"
 	}
 
+	log.Printf("Using port: %s", port)
+	log.Printf("Registered routes:")
+	for _, route := range r.Routes() {
+		log.Printf("  %s %s", route.Method, route.Path)
+	}
 	srv := &http.Server{
 		Addr:    ":" + port,
 		Handler: r,
