@@ -35,8 +35,17 @@ Write-Host ""
 # Stop existing containers
 docker-compose down 2>$null
 
-# Start the application
-docker-compose up --build -d
+# Check if images exist
+$backendExists = docker images kansas-backend -q
+$frontendExists = docker images kansas-frontend -q
+
+if ($backendExists -and $frontendExists) {
+    Write-Host "[INFO] Using existing images (faster startup)" -ForegroundColor Cyan
+    docker-compose up -d
+} else {
+    Write-Host "[INFO] Building images (first run or after changes)" -ForegroundColor Cyan
+    docker-compose up --build -d
+}
 
 Write-Host ""
 Write-Host "[SUCCESS] Application is starting..." -ForegroundColor Green
