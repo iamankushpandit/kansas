@@ -6,7 +6,7 @@ A comprehensive full-stack web application for analyzing healthcare provider net
 
 ### For Windows Users (Recommended)
 1. **Download** this project folder
-2. **Double-click** `quick-start.bat` 
+2. **Run** `./setup-demo.ps1` in PowerShell
 3. **Wait 3-5 minutes** for automatic setup
 4. **Application opens** at http://localhost:4192
 
@@ -16,6 +16,7 @@ A comprehensive full-stack web application for analyzing healthcare provider net
 - 4GB RAM available
 
 ### What It Does
+- ✅ Runs automated tests (frontend + backend)
 - ✅ Checks Docker installation
 - ✅ Builds healthcare analytics platform
 - ✅ Opens browser automatically
@@ -377,41 +378,69 @@ sudo chmod -R 755 .
 
 ## 🧪 Testing
 
+### Automated Frontend Testing Suite
+Comprehensive unit testing with 80%+ code coverage for healthcare-specific functionality.
+
+```bash
+# Run all tests with coverage
+cd kansas-healthcare-map
+npm run test:coverage
+
+# Run tests in watch mode
+npm run test
+
+# Run tests via PowerShell (Windows)
+.\setup-demo.ps1 --test
+```
+
+**Test Coverage**:
+- **33 passing tests** across 4 test suites
+- **Healthcare Analytics**: Core data processing algorithms
+- **Component Testing**: Vue.js components with accessibility
+- **API Integration**: Service layer testing with mocking
+- **Utility Functions**: Healthcare-specific calculations
+
+**Key Test Categories**:
+- Provider network stability analysis (2-5 year termination rates)
+- County-level healthcare data processing
+- Geographic density calculations
+- Recommendation engine algorithms
+- WCAG 2.1 AA accessibility compliance
+- Error handling and data validation
+
 ### Health Check Testing
 ```bash
 # Test backend health
-curl http://localhost:8080/health
+curl http://localhost:3247/health
 
 # Test frontend health (via proxy)
-curl http://localhost/health
+curl http://localhost:4192/health
 ```
 
 ### API Testing
 ```bash
 # Test backend endpoints
 cd kansas-healthcare-backend
-curl http://localhost:8080/api/v1/county-data
-curl http://localhost:8080/api/v1/county-data/Sedgwick
-```
-
-### Frontend Testing
-```bash
-# Run development server
-cd kansas-healthcare-map
-npm run dev
-
-# Build for production
-npm run build
+curl http://localhost:3247/api/v1/county-data
+curl http://localhost:3247/api/v1/county-data/Sedgwick
 ```
 
 ### Integration Testing
-1. Start both services
+1. Start both services with `docker-compose up`
 2. Verify health endpoints respond
 3. Navigate to county selection
 4. Verify data loading and recommendations
 5. Test PDF export functionality
 6. Validate filter operations
 7. Test graceful shutdown (Ctrl+C)
+
+### Test Documentation
+See [TESTING.md](kansas-healthcare-map/TESTING.md) for comprehensive testing documentation including:
+- Test framework setup (Vitest + Vue Test Utils)
+- Healthcare-specific test scenarios
+- Coverage requirements and reporting
+- CI/CD integration guidelines
+- Accessibility testing procedures
 
 ## 📊 Healthcare Data Model Architecture
 

@@ -91,7 +91,7 @@ func main() {
 	// CORS middleware for secure healthcare web application access
 	// Prevents unauthorized cross-origin requests to healthcare data
 	corsConfig := cors.DefaultConfig()
-	corsConfig.AllowOrigins = []string{"http://localhost:5173"}
+	corsConfig.AllowOrigins = []string{"http://localhost:5173", "http://localhost:4192"}
 	corsConfig.AllowMethods = []string{"GET", "POST", "PUT", "DELETE"}
 	corsConfig.AllowHeaders = []string{"Origin", "Content-Type", "Authorization"}
 	r.Use(cors.New(corsConfig))
