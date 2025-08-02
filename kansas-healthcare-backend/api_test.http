@@ -1,0 +1,96 @@
+### Business Logic API 1: Get Active Provider Count
+GET http://localhost:8080/api/v1/active-providers
+Content-Type: application/json
+
+###
+
+### Business Logic API 2: Get Terminated Network Analysis - Commercial
+GET http://localhost:8080/api/v1/terminated-analysis?network_id=Commercial
+Content-Type: application/json
+
+###
+
+### Business Logic API 2: Get Terminated Network Analysis - Medicare
+GET http://localhost:8080/api/v1/terminated-analysis?network_id=Medicare
+Content-Type: application/json
+
+###
+
+### Business Logic API 2: Get Terminated Network Analysis - Tricare
+GET http://localhost:8080/api/v1/terminated-analysis?network_id=Tricare
+Content-Type: application/json
+
+###
+
+### Get All Providers
+GET http://localhost:8080/api/v1/providers
+Content-Type: application/json
+
+###
+
+### Get Provider Networks
+GET http://localhost:8080/api/v1/provider-network
+Content-Type: application/json
+
+###
+
+### Get All County Data
+GET http://localhost:8080/api/v1/county-data
+Content-Type: application/json
+
+###
+
+### Get Specific County Data
+GET http://localhost:8080/api/v1/county-data/Johnson
+Content-Type: application/json
+
+###
+
+### Get County Data - Sedgwick
+GET http://localhost:8080/api/v1/county-data/Sedgwick
+Content-Type: application/json
+
+###
+
+### Get Recommendations for Johnson County
+GET http://localhost:8080/api/v1/recommendations/Johnson
+Content-Type: application/json
+
+###
+
+### Filter Providers - Primary Care
+POST http://localhost:8080/api/v1/filters
+Content-Type: application/json
+
+{
+  "specialty": "Primary Care",
+  "metric": "Provider Density",
+  "radius": 25,
+  "network": ""
+}
+
+###
+
+### Filter Providers - Cardiology
+POST http://localhost:8080/api/v1/filters
+Content-Type: application/json
+
+{
+  "specialty": "Cardiology",
+  "metric": "Claims Volume",
+  "radius": 50,
+  "network": "Medicare"
+}
+
+###
+
+### Filter Providers - All Specialties
+POST http://localhost:8080/api/v1/filters
+Content-Type: application/json
+
+{
+  "specialty": "All",
+  "metric": "Network Coverage",
+  "radius": 30,
+  "network": "Commercial"
+}

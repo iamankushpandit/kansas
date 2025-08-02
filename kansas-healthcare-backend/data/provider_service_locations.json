@@ -1,0 +1,422 @@
+[
+  {
+    "provider_id": "P001",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "123 Main St",
+    "address2": "Suite 100",
+    "city": "Overland Park",
+    "zip_code": "66210",
+    "county": "Johnson"
+  },
+  {
+    "provider_id": "P002",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "456 Oak Ave",
+    "address2": "",
+    "city": "Wichita",
+    "zip_code": "67202",
+    "county": "Sedgwick"
+  },
+  {
+    "provider_id": "P003",
+    "effective_date": "2022-01-01T00:00:00Z",
+    "termination_date": "2022-06-30T00:00:00Z",
+    "address1": "789 Pine Rd",
+    "address2": "Building A",
+    "city": "Kansas City",
+    "zip_code": "66101",
+    "county": "Wyandotte"
+  },
+  {
+    "provider_id": "P004",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "321 Elm St",
+    "address2": "",
+    "city": "Topeka",
+    "zip_code": "66604",
+    "county": "Shawnee"
+  },
+  {
+    "provider_id": "P005",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "654 Maple Dr",
+    "address2": "Floor 2",
+    "city": "Lawrence",
+    "zip_code": "66044",
+    "county": "Douglas"
+  },
+  {
+    "provider_id": "P006",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "987 Cedar Ln",
+    "address2": "",
+    "city": "Leavenworth",
+    "zip_code": "66048",
+    "county": "Leavenworth"
+  },
+  {
+    "provider_id": "P007",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "147 Birch Ave",
+    "address2": "Suite 200",
+    "city": "El Dorado",
+    "zip_code": "67042",
+    "county": "Butler"
+  },
+  {
+    "provider_id": "P008",
+    "effective_date": "2021-01-01T00:00:00Z",
+    "termination_date": "2022-03-15T00:00:00Z",
+    "address1": "258 Spruce St",
+    "address2": "",
+    "city": "Manhattan",
+    "zip_code": "66502",
+    "county": "Riley"
+  },
+  {
+    "provider_id": "P009",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "369 Willow Way",
+    "address2": "Building B",
+    "city": "Salina",
+    "zip_code": "67401",
+    "county": "Saline"
+  },
+  {
+    "provider_id": "P010",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "741 Poplar Rd",
+    "address2": "",
+    "city": "Hutchinson",
+    "zip_code": "67501",
+    "county": "Reno"
+  },
+  {
+    "provider_id": "P013",
+    "effective_date": "2020-01-01T00:00:00Z",
+    "termination_date": "2022-01-30T00:00:00Z",
+    "address1": "852 Hickory St",
+    "address2": "Suite 150",
+    "city": "Garden City",
+    "zip_code": "67846",
+    "county": "Finney"
+  },
+  {
+    "provider_id": "P020",
+    "effective_date": "2021-01-01T00:00:00Z",
+    "termination_date": "2022-02-28T00:00:00Z",
+    "address1": "963 Ash Blvd",
+    "address2": "",
+    "city": "Pittsburg",
+    "zip_code": "66762",
+    "county": "Crawford"
+  },
+  {
+    "provider_id": "P024",
+    "effective_date": "2020-01-01T00:00:00Z",
+    "termination_date": "2021-12-15T00:00:00Z",
+    "address1": "159 Sycamore Ave",
+    "address2": "Floor 3",
+    "city": "Emporia",
+    "zip_code": "66801",
+    "county": "Lyon"
+  },
+  {
+    "provider_id": "P029",
+    "effective_date": "2021-01-01T00:00:00Z",
+    "termination_date": "2022-09-30T00:00:00Z",
+    "address1": "357 Walnut St",
+    "address2": "",
+    "city": "Liberal",
+    "zip_code": "67901",
+    "county": "Seward"
+  },
+  {
+    "provider_id": "P035",
+    "effective_date": "2020-01-01T00:00:00Z",
+    "termination_date": "2021-08-15T00:00:00Z",
+    "address1": "486 Chestnut Dr",
+    "address2": "Building C",
+    "city": "Hays",
+    "zip_code": "67601",
+    "county": "Ellis"
+  },
+  {
+    "provider_id": "P044",
+    "effective_date": "2021-01-01T00:00:00Z",
+    "termination_date": "2022-11-30T00:00:00Z",
+    "address1": "597 Pecan Ln",
+    "address2": "",
+    "city": "Dodge City",
+    "zip_code": "67801",
+    "county": "Ford"
+  },
+  {
+    "provider_id": "P021",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "234 Neurology Way",
+    "address2": "Suite 300",
+    "city": "Overland Park",
+    "zip_code": "66211",
+    "county": "Johnson"
+  },
+  {
+    "provider_id": "P022",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "567 Dermatology Dr",
+    "address2": "",
+    "city": "Wichita",
+    "zip_code": "67203",
+    "county": "Sedgwick"
+  },
+  {
+    "provider_id": "P023",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "890 Gastro Ave",
+    "address2": "Floor 1",
+    "city": "Kansas City",
+    "zip_code": "66102",
+    "county": "Wyandotte"
+  },
+  {
+    "provider_id": "P025",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "123 Oncology Blvd",
+    "address2": "Cancer Center",
+    "city": "Topeka",
+    "zip_code": "66605",
+    "county": "Shawnee"
+  },
+  {
+    "provider_id": "P026",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "456 Radiology Rd",
+    "address2": "Imaging Suite",
+    "city": "Lawrence",
+    "zip_code": "66045",
+    "county": "Douglas"
+  },
+  {
+    "provider_id": "P027",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "789 Anesthesia Way",
+    "address2": "",
+    "city": "Fort Leavenworth",
+    "zip_code": "66027",
+    "county": "Leavenworth"
+  },
+  {
+    "provider_id": "P028",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "321 Pathology St",
+    "address2": "Lab Building",
+    "city": "Augusta",
+    "zip_code": "67010",
+    "county": "Butler"
+  },
+  {
+    "provider_id": "P030",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "654 Urology Dr",
+    "address2": "Suite 400",
+    "city": "Junction City",
+    "zip_code": "66441",
+    "county": "Geary"
+  },
+  {
+    "provider_id": "P031",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "987 Kidney Ave",
+    "address2": "",
+    "city": "McPherson",
+    "zip_code": "67460",
+    "county": "McPherson"
+  },
+  {
+    "provider_id": "P032",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "147 Lung Ln",
+    "address2": "Pulmonary Center",
+    "city": "Great Bend",
+    "zip_code": "67530",
+    "county": "Barton"
+  },
+  {
+    "provider_id": "P033",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "258 Rheumo Rd",
+    "address2": "",
+    "city": "Winfield",
+    "zip_code": "67156",
+    "county": "Cowley"
+  },
+  {
+    "provider_id": "P034",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "369 Infectious Dr",
+    "address2": "ID Clinic",
+    "city": "Parsons",
+    "zip_code": "67357",
+    "county": "Labette"
+  },
+  {
+    "provider_id": "P036",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "741 Surgery St",
+    "address2": "OR Complex",
+    "city": "Derby",
+    "zip_code": "67037",
+    "county": "Sedgwick"
+  },
+  {
+    "provider_id": "P037",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "852 Plastic Ave",
+    "address2": "Cosmetic Center",
+    "city": "Leawood",
+    "zip_code": "66224",
+    "county": "Johnson"
+  },
+  {
+    "provider_id": "P038",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "963 ENT Blvd",
+    "address2": "",
+    "city": "Shawnee",
+    "zip_code": "66218",
+    "county": "Johnson"
+  },
+  {
+    "provider_id": "P039",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "159 Women's Way",
+    "address2": "GYN Suite",
+    "city": "Olathe",
+    "zip_code": "66061",
+    "county": "Johnson"
+  },
+  {
+    "provider_id": "P040",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "357 Birth Center Dr",
+    "address2": "OB Wing",
+    "city": "Prairie Village",
+    "zip_code": "66208",
+    "county": "Johnson"
+  },
+  {
+    "provider_id": "P041",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "486 Family Med Ave",
+    "address2": "",
+    "city": "Chanute",
+    "zip_code": "66720",
+    "county": "Neosho"
+  },
+  {
+    "provider_id": "P042",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "597 Internal Med St",
+    "address2": "Suite 500",
+    "city": "Ottawa",
+    "zip_code": "66067",
+    "county": "Franklin"
+  },
+  {
+    "provider_id": "P043",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "234 Sports Med Way",
+    "address2": "Athletic Center",
+    "city": "Newton",
+    "zip_code": "67114",
+    "county": "Harvey"
+  },
+  {
+    "provider_id": "P045",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "567 Physical Med Dr",
+    "address2": "Rehab Center",
+    "city": "Arkansas City",
+    "zip_code": "67005",
+    "county": "Cowley"
+  },
+  {
+    "provider_id": "P046",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "890 Rehab Ave",
+    "address2": "",
+    "city": "Independence",
+    "zip_code": "67301",
+    "county": "Montgomery"
+  },
+  {
+    "provider_id": "P047",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "123 Geriatric Blvd",
+    "address2": "Senior Care",
+    "city": "Coffeyville",
+    "zip_code": "67337",
+    "county": "Montgomery"
+  },
+  {
+    "provider_id": "P048",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "456 Allergy Rd",
+    "address2": "Immunology Lab",
+    "city": "Atchison",
+    "zip_code": "66002",
+    "county": "Atchison"
+  },
+  {
+    "provider_id": "P049",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "789 Critical Care Way",
+    "address2": "ICU",
+    "city": "Fort Scott",
+    "zip_code": "66701",
+    "county": "Bourbon"
+  },
+  {
+    "provider_id": "P050",
+    "effective_date": "2023-01-01T00:00:00Z",
+    "termination_date": "9999-12-31T00:00:00Z",
+    "address1": "321 Hospital St",
+    "address2": "Hospitalist Office",
+    "city": "Iola",
+    "zip_code": "66749",
+    "county": "Allen"
+  }
+]

@@ -1,0 +1,502 @@
+[
+  {
+    "county": "Allen",
+    "claims_count": 890,
+    "avg_claim_amount": 750.25
+  },
+  {
+    "county": "Anderson",
+    "claims_count": 720,
+    "avg_claim_amount": 685.50
+  },
+  {
+    "county": "Atchison",
+    "claims_count": 1250,
+    "avg_claim_amount": 825.75
+  },
+  {
+    "county": "Barber",
+    "claims_count": 480,
+    "avg_claim_amount": 650.00
+  },
+  {
+    "county": "Barton",
+    "claims_count": 2150,
+    "avg_claim_amount": 950.25
+  },
+  {
+    "county": "Bourbon",
+    "claims_count": 950,
+    "avg_claim_amount": 780.50
+  },
+  {
+    "county": "Brown",
+    "claims_count": 820,
+    "avg_claim_amount": 720.75
+  },
+  {
+    "county": "Butler",
+    "claims_count": 3200,
+    "avg_claim_amount": 1180.25
+  },
+  {
+    "county": "Chase",
+    "claims_count": 280,
+    "avg_claim_amount": 580.00
+  },
+  {
+    "county": "Chautauqua",
+    "claims_count": 210,
+    "avg_claim_amount": 520.50
+  },
+  {
+    "county": "Cherokee",
+    "claims_count": 1580,
+    "avg_claim_amount": 890.75
+  },
+  {
+    "county": "Cheyenne",
+    "claims_count": 180,
+    "avg_claim_amount": 480.25
+  },
+  {
+    "county": "Clark",
+    "claims_count": 120,
+    "avg_claim_amount": 420.00
+  },
+  {
+    "county": "Clay",
+    "claims_count": 580,
+    "avg_claim_amount": 680.50
+  },
+  {
+    "county": "Cloud",
+    "claims_count": 650,
+    "avg_claim_amount": 720.25
+  },
+  {
+    "county": "Coffey",
+    "claims_count": 480,
+    "avg_claim_amount": 650.75
+  },
+  {
+    "county": "Comanche",
+    "claims_count": 85,
+    "avg_claim_amount": 380.00
+  },
+  {
+    "county": "Cowley",
+    "claims_count": 2850,
+    "avg_claim_amount": 1120.50
+  },
+  {
+    "county": "Crawford",
+    "claims_count": 2380,
+    "avg_claim_amount": 1050.25
+  },
+  {
+    "county": "Decatur",
+    "claims_count": 220,
+    "avg_claim_amount": 520.75
+  },
+  {
+    "county": "Dickinson",
+    "claims_count": 1180,
+    "avg_claim_amount": 850.50
+  },
+  {
+    "county": "Doniphan",
+    "claims_count": 420,
+    "avg_claim_amount": 620.25
+  },
+  {
+    "county": "Douglas",
+    "claims_count": 8500,
+    "avg_claim_amount": 1450.75
+  },
+  {
+    "county": "Edwards",
+    "claims_count": 180,
+    "avg_claim_amount": 480.00
+  },
+  {
+    "county": "Elk",
+    "claims_count": 150,
+    "avg_claim_amount": 450.50
+  },
+  {
+    "county": "Ellis",
+    "claims_count": 2250,
+    "avg_claim_amount": 1020.25
+  },
+  {
+    "county": "Ellsworth",
+    "claims_count": 380,
+    "avg_claim_amount": 580.75
+  },
+  {
+    "county": "Finney",
+    "claims_count": 3850,
+    "avg_claim_amount": 1250.50
+  },
+  {
+    "county": "Ford",
+    "claims_count": 2180,
+    "avg_claim_amount": 980.25
+  },
+  {
+    "county": "Franklin",
+    "claims_count": 1850,
+    "avg_claim_amount": 920.75
+  },
+  {
+    "county": "Geary",
+    "claims_count": 2450,
+    "avg_claim_amount": 1080.50
+  },
+  {
+    "county": "Gove",
+    "claims_count": 135,
+    "avg_claim_amount": 420.25
+  },
+  {
+    "county": "Graham",
+    "claims_count": 120,
+    "avg_claim_amount": 380.00
+  },
+  {
+    "county": "Grant",
+    "claims_count": 380,
+    "avg_claim_amount": 580.50
+  },
+  {
+    "county": "Gray",
+    "claims_count": 320,
+    "avg_claim_amount": 520.75
+  },
+  {
+    "county": "Greeley",
+    "claims_count": 75,
+    "avg_claim_amount": 350.00
+  },
+  {
+    "county": "Greenwood",
+    "claims_count": 450,
+    "avg_claim_amount": 620.25
+  },
+  {
+    "county": "Hamilton",
+    "claims_count": 120,
+    "avg_claim_amount": 380.50
+  },
+  {
+    "county": "Harper",
+    "claims_count": 380,
+    "avg_claim_amount": 580.75
+  },
+  {
+    "county": "Harvey",
+    "claims_count": 2580,
+    "avg_claim_amount": 1150.25
+  },
+  {
+    "county": "Haskell",
+    "claims_count": 180,
+    "avg_claim_amount": 480.00
+  },
+  {
+    "county": "Hodgeman",
+    "claims_count": 90,
+    "avg_claim_amount": 350.50
+  },
+  {
+    "county": "Jackson",
+    "claims_count": 820,
+    "avg_claim_amount": 720.75
+  },
+  {
+    "county": "Jefferson",
+    "claims_count": 1180,
+    "avg_claim_amount": 850.25
+  },
+  {
+    "county": "Jewell",
+    "claims_count": 180,
+    "avg_claim_amount": 480.50
+  },
+  {
+    "county": "Johnson",
+    "claims_count": 42500,
+    "avg_claim_amount": 1850.75
+  },
+  {
+    "county": "Kearny",
+    "claims_count": 220,
+    "avg_claim_amount": 520.00
+  },
+  {
+    "county": "Kingman",
+    "claims_count": 480,
+    "avg_claim_amount": 650.25
+  },
+  {
+    "county": "Kiowa",
+    "claims_count": 120,
+    "avg_claim_amount": 380.75
+  },
+  {
+    "county": "Labette",
+    "claims_count": 1480,
+    "avg_claim_amount": 880.50
+  },
+  {
+    "county": "Lane",
+    "claims_count": 90,
+    "avg_claim_amount": 350.25
+  },
+  {
+    "county": "Leavenworth",
+    "claims_count": 5850,
+    "avg_claim_amount": 1380.75
+  },
+  {
+    "county": "Lincoln",
+    "claims_count": 180,
+    "avg_claim_amount": 480.00
+  },
+  {
+    "county": "Linn",
+    "claims_count": 580,
+    "avg_claim_amount": 680.50
+  },
+  {
+    "county": "Logan",
+    "claims_count": 150,
+    "avg_claim_amount": 450.25
+  },
+  {
+    "county": "Lyon",
+    "claims_count": 2250,
+    "avg_claim_amount": 1020.75
+  },
+  {
+    "county": "Marion",
+    "claims_count": 720,
+    "avg_claim_amount": 685.50
+  },
+  {
+    "county": "Marshall",
+    "claims_count": 650,
+    "avg_claim_amount": 720.25
+  },
+  {
+    "county": "McPherson",
+    "claims_count": 2050,
+    "avg_claim_amount": 980.75
+  },
+  {
+    "county": "Meade",
+    "claims_count": 220,
+    "avg_claim_amount": 520.50
+  },
+  {
+    "county": "Miami",
+    "claims_count": 2450,
+    "avg_claim_amount": 1080.25
+  },
+  {
+    "county": "Mitchell",
+    "claims_count": 380,
+    "avg_claim_amount": 580.00
+  },
+  {
+    "county": "Montgomery",
+    "claims_count": 2750,
+    "avg_claim_amount": 1180.50
+  },
+  {
+    "county": "Morris",
+    "claims_count": 320,
+    "avg_claim_amount": 520.75
+  },
+  {
+    "county": "Morton",
+    "claims_count": 120,
+    "avg_claim_amount": 380.25
+  },
+  {
+    "county": "Nemaha",
+    "claims_count": 650,
+    "avg_claim_amount": 720.50
+  },
+  {
+    "county": "Neosho",
+    "claims_count": 1250,
+    "avg_claim_amount": 825.75
+  },
+  {
+    "county": "Ness",
+    "claims_count": 180,
+    "avg_claim_amount": 480.00
+  },
+  {
+    "county": "Norton",
+    "claims_count": 320,
+    "avg_claim_amount": 520.25
+  },
+  {
+    "county": "Osage",
+    "claims_count": 950,
+    "avg_claim_amount": 780.75
+  },
+  {
+    "county": "Osborne",
+    "claims_count": 220,
+    "avg_claim_amount": 520.50
+  },
+  {
+    "county": "Ottawa",
+    "claims_count": 380,
+    "avg_claim_amount": 580.00
+  },
+  {
+    "county": "Pawnee",
+    "claims_count": 450,
+    "avg_claim_amount": 620.25
+  },
+  {
+    "county": "Phillips",
+    "claims_count": 320,
+    "avg_claim_amount": 520.75
+  },
+  {
+    "county": "Pottawatomie",
+    "claims_count": 1580,
+    "avg_claim_amount": 890.50
+  },
+  {
+    "county": "Pratt",
+    "claims_count": 580,
+    "avg_claim_amount": 680.25
+  },
+  {
+    "county": "Rawlins",
+    "claims_count": 120,
+    "avg_claim_amount": 380.75
+  },
+  {
+    "county": "Reno",
+    "claims_count": 5250,
+    "avg_claim_amount": 1320.50
+  },
+  {
+    "county": "Republic",
+    "claims_count": 320,
+    "avg_claim_amount": 520.25
+  },
+  {
+    "county": "Rice",
+    "claims_count": 580,
+    "avg_claim_amount": 680.75
+  },
+  {
+    "county": "Riley",
+    "claims_count": 6850,
+    "avg_claim_amount": 1420.25
+  },
+  {
+    "county": "Rooks",
+    "claims_count": 320,
+    "avg_claim_amount": 520.50
+  },
+  {
+    "county": "Rush",
+    "claims_count": 180,
+    "avg_claim_amount": 480.75
+  },
+  {
+    "county": "Russell",
+    "claims_count": 450,
+    "avg_claim_amount": 620.00
+  },
+  {
+    "county": "Saline",
+    "claims_count": 4650,
+    "avg_claim_amount": 1280.25
+  },
+  {
+    "county": "Scott",
+    "claims_count": 320,
+    "avg_claim_amount": 520.75
+  },
+  {
+    "county": "Sedgwick",
+    "claims_count": 35800,
+    "avg_claim_amount": 1750.50
+  },
+  {
+    "county": "Seward",
+    "claims_count": 1480,
+    "avg_claim_amount": 880.25
+  },
+  {
+    "county": "Shawnee",
+    "claims_count": 14500,
+    "avg_claim_amount": 1520.75
+  },
+  {
+    "county": "Smith",
+    "claims_count": 180,
+    "avg_claim_amount": 480.25
+  },
+  {
+    "county": "Stafford",
+    "claims_count": 320,
+    "avg_claim_amount": 520.75
+  },
+  {
+    "county": "Stanton",
+    "claims_count": 120,
+    "avg_claim_amount": 380.50
+  },
+  {
+    "county": "Stevens",
+    "claims_count": 220,
+    "avg_claim_amount": 520.25
+  },
+  {
+    "county": "Sumner",
+    "claims_count": 2050,
+    "avg_claim_amount": 980.50
+  },
+  {
+    "county": "Thomas",
+    "claims_count": 150,
+    "avg_claim_amount": 450.75
+  },
+  {
+    "county": "Trego",
+    "claims_count": 135,
+    "avg_claim_amount": 420.25
+  },
+  {
+    "county": "Wabaunsee",
+    "claims_count": 380,
+    "avg_claim_amount": 580.50
+  },
+  {
+    "county": "Wallace",
+    "claims_count": 90,
+    "avg_claim_amount": 350.25
+  },
+  {
+    "county": "Washington",
+    "claims_count": 320,
+    "avg_claim_amount": 520.75
+  },
+  {
+    "county": "Wichita",
+    "claims_count": 105,
+    "avg_claim_amount": 380.00
+  }
+]

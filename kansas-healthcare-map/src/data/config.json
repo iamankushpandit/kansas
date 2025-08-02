@@ -1,0 +1,52 @@
+{
+  "specialties": [
+    "All",
+    "Primary Care",
+    "Cardiology",
+    "Orthopedics", 
+    "Pediatrics",
+    "Psychiatry",
+    "Emergency Medicine",
+    "Neurology",
+    "Dermatology",
+    "Gastroenterology",
+    "Endocrinology",
+    "Oncology",
+    "Radiology",
+    "Anesthesiology",
+    "Pathology",
+    "Ophthalmology",
+    "Urology",
+    "Nephrology",
+    "Pulmonology",
+    "Rheumatology",
+    "Infectious Disease",
+    "Hematology",
+    "General Surgery",
+    "Plastic Surgery",
+    "Otolaryngology",
+    "Gynecology",
+    "Obstetrics",
+    "Family Medicine",
+    "Internal Medicine",
+    "Sports Medicine",
+    "Pain Management",
+    "Physical Medicine",
+    "Rehabilitation",
+    "Geriatrics",
+    "Allergy/Immunology",
+    "Critical Care",
+    "Hospitalist"
+  ],
+  "networks": [
+    "Commercial",
+    "Medicare", 
+    "Tricare"
+  ],
+  "metrics": [
+    "Provider Density",
+    "Claims Volume",
+    "Network Coverage",
+    "Wait Times"
+  ]
+}
