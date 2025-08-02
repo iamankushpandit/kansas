@@ -2,6 +2,32 @@
 
 A comprehensive full-stack web application for analyzing healthcare provider networks across Kansas counties, providing data-driven insights for network optimization and strategic planning.
 
+## 🚀 Quick Start (One-Click Demo)
+
+### For Windows Users (Recommended)
+1. **Download** this project folder
+2. **Double-click** `quick-start.bat` 
+3. **Wait 3-5 minutes** for automatic setup
+4. **Application opens** at http://localhost:4192
+
+### Requirements
+- Windows 10/11
+- Docker Desktop (script will check and guide you if missing)
+- 4GB RAM available
+
+### What It Does
+- ✅ Checks Docker installation
+- ✅ Builds healthcare analytics platform
+- ✅ Opens browser automatically
+- ✅ Ready for demo in minutes
+
+### Access URLs
+- **Frontend**: http://localhost:4192
+- **Backend API**: http://localhost:3247
+- **Health Check**: http://localhost:3247/health
+
+---
+
 ## 🚀 Features
 
 ### Interactive Data Visualization
