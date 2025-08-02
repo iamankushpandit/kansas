@@ -10,10 +10,10 @@ import (
 )
 
 type ProviderController struct {
-	service *services.ProviderService
+	service services.ProviderServiceInterface
 }
 
-func NewProviderController(service *services.ProviderService) *ProviderController {
+func NewProviderController(service services.ProviderServiceInterface) *ProviderController {
 	return &ProviderController{service: service}
 }
 

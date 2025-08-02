@@ -10,10 +10,10 @@ import (
 )
 
 type AnalyticsController struct {
-	service *services.AnalyticsService
+	service services.AnalyticsServiceInterface
 }
 
-func NewAnalyticsController(service *services.AnalyticsService) *AnalyticsController {
+func NewAnalyticsController(service services.AnalyticsServiceInterface) *AnalyticsController {
 	return &AnalyticsController{service: service}
 }
 

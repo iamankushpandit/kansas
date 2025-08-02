@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"encoding/json"
 	"kansas-healthcare-api/models"
-	"kansas-healthcare-api/services"
 	"net/http"
 	"net/http/httptest"
 	"testing"

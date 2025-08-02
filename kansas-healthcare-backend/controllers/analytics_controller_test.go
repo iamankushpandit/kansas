@@ -1,10 +1,8 @@
 package controllers
 
 import (
-	"bytes"
 	"encoding/json"
 	"kansas-healthcare-api/models"
-	"kansas-healthcare-api/services"
 	"net/http"
 	"net/http/httptest"
 	"testing"
@@ -28,18 +26,33 @@ func (m *MockAnalyticsService) GetCountyData(county string) (*models.CountyStats
 	return args.Get(0).(*models.CountyStats), args.Error(1)
 }
 
-func (m *MockAnalyticsService) GetActiveProviderCount() (map[string]interface{}, error) {
-	args := m.Called()
-	return args.Get(0).(map[string]interface{}), args.Error(1)
+func (m *MockAnalyticsService) GetRecommendations(county string) []models.Recommendation {
+	args := m.Called(county)
+	return args.Get(0).([]models.Recommendation)
 }
 
-func (m *MockAnalyticsService) GetTerminatedNetworkAnalysis(networkId string) (map[string]interface{}, error) {
+func (m *MockAnalyticsService) GetActiveProviderCount() (int, error) {
+	args := m.Called()
+	return args.Int(0), args.Error(1)
+}
+
+func (m *MockAnalyticsService) GetTerminatedNetworkAnalysis(networkId string) (*models.TerminatedAnalysisResult, error) {
 	args := m.Called(networkId)
-	return args.Get(0).(map[string]interface{}), args.Error(1)
+	return args.Get(0).(*models.TerminatedAnalysisResult), args.Error(1)
+}
+
+func (m *MockAnalyticsService) GetCountyTerminatedNetworkAnalysis(county, networkId string) (*models.TerminatedAnalysisResult, error) {
+	args := m.Called(county, networkId)
+	return args.Get(0).(*models.TerminatedAnalysisResult), args.Error(1)
 }
 
 func (m *MockAnalyticsService) GetSpecialtyDensityAnalysis(county string) (map[string]interface{}, error) {
 	args := m.Called(county)
+	return args.Get(0).(map[string]interface{}), args.Error(1)
+}
+
+func (m *MockAnalyticsService) GetRadiusAnalysis(county string, radius int, networkId string) (map[string]interface{}, error) {
+	args := m.Called(county, radius, networkId)
 	return args.Get(0).(map[string]interface{}), args.Error(1)
 }
 
@@ -112,9 +125,9 @@ func TestGetSpecialtyDensityAnalysis(t *testing.T) {
 	controller := NewAnalyticsController(mockService)
 	
 	expectedData := map[string]interface{}{
-		"specialty_densities": []map[string]interface{}{
-			{"name": "Primary Care", "count": 10},
-			{"name": "Cardiology", "count": 5},
+		"specialty_densities": []interface{}{
+			map[string]interface{}{"name": "Primary Care", "count": float64(10)},
+			map[string]interface{}{"name": "Cardiology", "count": float64(5)},
 		},
 	}
 	
