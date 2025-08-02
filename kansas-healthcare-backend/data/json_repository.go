@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"kansas-healthcare-api/config"
 	"kansas-healthcare-api/models"
 	"log"
 	"math"
@@ -235,6 +236,53 @@ func (r *JSONRepository) GetTerminatedNetworkCount(networkId string) (int, error
 		}
 	}
 	return count, nil
+}
+
+// GetCountyTerminatedNetworkCount implements the specific algorithm for county-based terminated network analysis
+func (r *JSONRepository) GetCountyTerminatedNetworkCount(county, networkId string) (int, int, error) {
+	fiveYearsAgo, twoYearsAgo := config.GetTerminatedAnalysisTimeRange()
+	
+	// Step 1: Get active providers in county with active service locations
+	activeProviderIds := make(map[string]bool)
+	for _, provider := range r.providers {
+		if provider.Status == "Active" {
+			// Check if provider has active service location in county
+			for _, location := range r.providerServiceLocations {
+				if location.ProviderID == provider.ProviderID &&
+					location.County == county &&
+					location.TerminationDate.Year() == 9999 { // Active service location
+					activeProviderIds[provider.ProviderID] = true
+					break
+				}
+			}
+		}
+	}
+	
+	totProvbyCounty := len(activeProviderIds)
+	
+	// Step 2: Check terminated network providers
+	termNetworkCount := 0
+	for providerId := range activeProviderIds {
+		found := false
+		for _, network := range r.providerNetwork {
+			if network.ProviderID == providerId && network.NetworkID == networkId {
+				found = true
+				// Check if terminated in the specified timeframe
+				if network.TerminationReason == config.LeftNetworkReason &&
+					network.TerminationDate.After(fiveYearsAgo) &&
+					network.TerminationDate.Before(twoYearsAgo) {
+					termNetworkCount++
+				}
+				break
+			}
+		}
+		// If no row found in Provider Network Table for the provider ID for that specific Network
+		if !found {
+			termNetworkCount++
+		}
+	}
+	
+	return totProvbyCounty, termNetworkCount, nil
 }
 
 func (r *JSONRepository) GetTerminatedServiceLocationCount(networkId string) (int, error) {

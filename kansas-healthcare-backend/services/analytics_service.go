@@ -184,33 +184,20 @@ func (s *AnalyticsService) GetTerminatedNetworkAnalysis(networkId string) (*mode
 }
 
 func (s *AnalyticsService) GetCountyTerminatedNetworkAnalysis(county, networkId string) (*models.TerminatedAnalysisResult, error) {
-	providers, err := s.repo.GetProvidersInCounty(county)
+	totProvbyCounty, termNetworkCount, err := s.repo.GetCountyTerminatedNetworkCount(county, networkId)
 	if err != nil {
 		return nil, err
 	}
 
-	activeCount := 0
-	terminatedCount := 0
-
-	for _, provider := range providers {
-		if provider.Status == "Active" {
-			activeCount++
-		} else if provider.Status == "Terminated" {
-			terminatedCount++
-		}
-	}
-
-	totalProviders := activeCount + terminatedCount
-	percentage := 0.0
-	if totalProviders > 0 {
-		percentage = (float64(terminatedCount) / float64(totalProviders)) * 100
-	}
+	// Calculate percentage: (TotProvbyCounty - (TotProvbyCounty - TermNetworkCount))/100
+	// This simplifies to: TermNetworkCount/100
+	percentage := float64(termNetworkCount) / 100.0
 
 	return &models.TerminatedAnalysisResult{
-		TermNetworkCount:     terminatedCount,
-		ServiceLocationCount: 0, // County-specific service locations not tracked
+		TermNetworkCount:     termNetworkCount,
+		ServiceLocationCount: 0, // Not used in county analysis
 		PercentageTerminated: percentage,
-		TotalActiveProviders: activeCount,
+		TotalActiveProviders: totProvbyCounty,
 	}, nil
 }
 

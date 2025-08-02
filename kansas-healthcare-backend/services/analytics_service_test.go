@@ -67,6 +67,11 @@ func (m *MockRepository) GetProviderServiceLocations() ([]models.ProviderService
 	return args.Get(0).([]models.ProviderServiceLocation), args.Error(1)
 }
 
+func (m *MockRepository) GetCountyTerminatedNetworkCount(county, networkId string) (int, int, error) {
+	args := m.Called(county, networkId)
+	return args.Int(0), args.Int(1), args.Error(2)
+}
+
 func TestGetAllCountyData(t *testing.T) {
 	mockRepo := new(MockRepository)
 	service := NewAnalyticsService(mockRepo)

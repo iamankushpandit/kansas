@@ -14,4 +14,5 @@ type Repository interface {
 	GetTerminatedServiceLocationCount(networkId string) (int, error)
 	GetProvidersInCounty(county string) ([]models.Provider, error)
 	GetRadiusAnalysis(county string, radius int, networkId string) (map[string]interface{}, error)
+	GetCountyTerminatedNetworkCount(county, networkId string) (int, int, error)
 }
