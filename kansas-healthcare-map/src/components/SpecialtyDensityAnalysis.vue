@@ -19,7 +19,7 @@
               size="small" 
               variant="flat"
             >
-              {{ item.gap > 0 ? `+${item.gap.toFixed(2)}` : item.gap.toFixed(2) }}
+              {{ item.gap === null ? 'N/A' : (item.gap > 0 ? `+${item.gap.toFixed(2)}` : item.gap.toFixed(2)) }}
             </v-chip>
           </template>
         </v-data-table>
@@ -51,17 +51,19 @@ export default {
         specialty: item.name,
         current_density: item.count === 0 ? 'No providers' : `${(item.count / 700).toFixed(3)}/sq mi`,
         recommended_density: `${(item.recommended || 0).toFixed(2)}/sq mi`,
-        gap: item.gap || 0
+        gap: item.gap !== undefined ? item.gap : null
       }))
     }
   },
   methods: {
     getPriorityColor(gap) {
+      if (gap === null || gap === undefined) return 'text-error'
       if (gap > 1.0) return 'text-error'
       if (gap > 0.3) return 'text-warning'
       return 'text-success'
     },
     getPriorityChipColor(gap) {
+      if (gap === null || gap === undefined) return 'error'
       if (gap > 1.0) return 'error'
       if (gap > 0.3) return 'warning'
       return 'success'
