@@ -87,6 +87,20 @@
             </v-alert>
           </v-col>
         </v-row>
+        
+        <!-- Distance Calculation Footnote -->
+        <v-row>
+          <v-col cols="12">
+            <v-card variant="outlined" class="mt-4">
+              <v-card-text class="text-caption text-center">
+                <v-icon size="small" class="mr-1">mdi-information-outline</v-icon>
+                <strong>Distance Calculation Methodology:</strong> Provider distances are calculated using GPS coordinates and the Haversine formula for precise geographic measurements. 
+                Urban areas show density as "providers/sq mi" while rural areas display average distance between providers (e.g., "~8.2 mi apart"). 
+                This provides realistic accessibility metrics for healthcare network planning.
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
       </v-container>
     </v-main>
   </v-app>

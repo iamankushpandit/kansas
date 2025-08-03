@@ -4,7 +4,12 @@
       <v-col cols="6">
         <div class="text-subtitle-2 text-primary">Provider Metrics</div>
         <div class="text-body-2">Active Providers: <strong>{{ selectedCounty.provider_count }}</strong></div>
-        <div class="text-body-2">Density Classification: <strong class="text-capitalize">{{ selectedCounty.density }}</strong></div>
+        <div class="text-body-2">
+          Density Classification: <strong class="text-capitalize">{{ selectedCounty.density }}</strong>
+        </div>
+        <div class="text-body-2">
+          Provider Distance: <strong>{{ selectedCounty.density_miles }}</strong>
+        </div>
       </v-col>
       <v-col cols="6">
         <div class="text-subtitle-2 text-primary">Claims Metrics</div>

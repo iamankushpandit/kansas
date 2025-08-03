@@ -16,6 +16,7 @@ type JSONRepository struct {
 	providerNetwork          []models.ProviderNetwork
 	providerServiceLocations []models.ProviderServiceLocation
 	countyClaims             []models.CountyClaims
+	countyAreas              []models.CountyArea
 }
 
 func NewJSONRepository() *JSONRepository {
@@ -29,6 +30,7 @@ func (r *JSONRepository) loadData() {
 	r.loadProviderNetworks()
 	r.loadProviderServiceLocations()
 	r.loadCountyClaims()
+	r.loadCountyAreas()
 }
 
 func (r *JSONRepository) loadProviders() {
@@ -71,6 +73,16 @@ func (r *JSONRepository) loadCountyClaims() {
 	}
 }
 
+func (r *JSONRepository) loadCountyAreas() {
+	file, err := ioutil.ReadFile("data/county_areas.json")
+	if err != nil {
+		log.Fatal("Required file data/county_areas.json not found:", err)
+	}
+	if err := json.Unmarshal(file, &r.countyAreas); err != nil {
+		log.Fatal("Error parsing county_areas.json:", err)
+	}
+}
+
 func (r *JSONRepository) GetProviders() ([]models.Provider, error) {
 	return r.providers, nil
 }
@@ -94,24 +106,95 @@ func (r *JSONRepository) calculateProviderDensity(providerCount int) string {
 	return "critical"
 }
 
-func (r *JSONRepository) calculateProviderDensityMiles(providerCount int) string {
+// haversineDistance calculates the distance between two points on Earth using the Haversine formula
+func (r *JSONRepository) haversineDistance(lat1, lng1, lat2, lng2 float64) float64 {
+	const earthRadiusMiles = 3959.0
+	
+	// Convert degrees to radians
+	lat1Rad := lat1 * math.Pi / 180
+	lng1Rad := lng1 * math.Pi / 180
+	lat2Rad := lat2 * math.Pi / 180
+	lng2Rad := lng2 * math.Pi / 180
+	
+	// Haversine formula
+	dlat := lat2Rad - lat1Rad
+	dlng := lng2Rad - lng1Rad
+	a := math.Sin(dlat/2)*math.Sin(dlat/2) + math.Cos(lat1Rad)*math.Cos(lat2Rad)*math.Sin(dlng/2)*math.Sin(dlng/2)
+	c := 2 * math.Atan2(math.Sqrt(a), math.Sqrt(1-a))
+	return earthRadiusMiles * c
+}
+
+// calculateActualProviderDistances calculates average distance between providers using their actual locations
+func (r *JSONRepository) calculateActualProviderDistances(county string) float64 {
+	// Get active providers in county with locations
+	var providerLocations []models.ProviderServiceLocation
+	for _, provider := range r.providers {
+		if provider.County == county && provider.Status == "Active" {
+			// Find active service location for this provider
+			for _, location := range r.providerServiceLocations {
+				if location.ProviderID == provider.ProviderID && 
+				   location.County == county && 
+				   location.TerminationDate.Year() == 9999 {
+					providerLocations = append(providerLocations, location)
+					break
+				}
+			}
+		}
+	}
+	
+	if len(providerLocations) < 2 {
+		return 0
+	}
+	
+	// Calculate average distance to nearest provider for each provider
+	var totalDistance float64
+	for i, p1 := range providerLocations {
+		minDistance := math.MaxFloat64
+		for j, p2 := range providerLocations {
+			if i != j {
+				distance := r.haversineDistance(p1.Latitude, p1.Longitude, p2.Latitude, p2.Longitude)
+				if distance < minDistance {
+					minDistance = distance
+				}
+			}
+		}
+		totalDistance += minDistance
+	}
+	
+	return totalDistance / float64(len(providerLocations))
+}
+
+func (r *JSONRepository) calculateProviderDensityMiles(providerCount int, county string) string {
 	if providerCount == 0 {
 		return "No providers"
 	}
 	
-	// Kansas counties average ~700 square miles
-	avgCountyAreaSqMiles := 700.0
+	// Try to calculate actual distances first
+	actualDistance := r.calculateActualProviderDistances(county)
+	if actualDistance > 0 {
+		return fmt.Sprintf("~%.1f mi apart", actualDistance)
+	}
 	
-	// Calculate providers per square mile
-	providersPerSqMile := float64(providerCount) / avgCountyAreaSqMiles
+	// Fallback to area-based calculation
+	countyAreaSqMiles := r.getCountyArea(county)
+	providersPerSqMile := float64(providerCount) / countyAreaSqMiles
 	
 	if providersPerSqMile >= 1 {
 		return fmt.Sprintf("%.1f/sq mi", providersPerSqMile)
 	} else {
-		// For sparse areas, show average distance between providers
-		avgDistanceMiles := math.Sqrt(avgCountyAreaSqMiles / float64(providerCount))
+		avgDistanceMiles := math.Sqrt(countyAreaSqMiles / float64(providerCount))
 		return fmt.Sprintf("~%.1f mi apart", avgDistanceMiles)
 	}
+}
+
+func (r *JSONRepository) getCountyArea(county string) float64 {
+	for _, area := range r.countyAreas {
+		if area.County == county {
+			return area.AreaSqMiles
+		}
+	}
+	// Fallback to average if county not found
+	return 700.0
 }
 
 func (r *JSONRepository) GetCountyStats() ([]models.CountyStats, error) {
@@ -136,7 +219,7 @@ func (r *JSONRepository) GetCountyStats() ([]models.CountyStats, error) {
 			ClaimsCount:    claims.ClaimsCount,
 			AvgClaimAmount: claims.AvgClaimAmount,
 			Density:        density,
-			DensityMiles:   r.calculateProviderDensityMiles(providerCount),
+			DensityMiles:   r.calculateProviderDensityMiles(providerCount, claims.County),
 		})
 	}
 	
@@ -162,7 +245,7 @@ func (r *JSONRepository) GetCountyStatsByName(county string) (*models.CountyStat
 				ClaimsCount:    claims.ClaimsCount,
 				AvgClaimAmount: claims.AvgClaimAmount,
 				Density:        density,
-				DensityMiles:   r.calculateProviderDensityMiles(providerCount),
+				DensityMiles:   r.calculateProviderDensityMiles(providerCount, county),
 			}, nil
 		}
 	}

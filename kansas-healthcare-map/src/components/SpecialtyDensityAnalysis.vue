@@ -2,7 +2,7 @@
   <section class="mt-3" aria-labelledby="specialty-density-title">
     <v-row>
       <v-col cols="12">
-        <h4 id="specialty-density-title" class="text-subtitle-2 text-primary">Specialty Density Analysis</h4>
+          <h4 id="specialty-density-title" class="text-subtitle-2 text-primary">Specialty Density Analysis</h4>
         <p class="text-caption mb-2">Provider specialties sorted by density (least to most dense)</p>
         <div role="list" aria-label="Medical specialties ranked by provider density">
           <v-row>
@@ -46,3 +46,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.tooltip-content {
+  max-width: 300px;
+  line-height: 1.4;
+}
+</style>

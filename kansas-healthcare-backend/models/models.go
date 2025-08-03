@@ -27,6 +27,8 @@ type ProviderServiceLocation struct {
 	City            string    `json:"city"`
 	ZipCode         string    `json:"zip_code"`
 	County          string    `json:"county"`
+	Latitude        float64   `json:"latitude"`
+	Longitude       float64   `json:"longitude"`
 }
 
 type CountyStats struct {

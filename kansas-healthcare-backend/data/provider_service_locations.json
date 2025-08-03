@@ -7,7 +7,9 @@
     "address2": "Suite 100",
     "city": "Overland Park",
     "zip_code": "66210",
-    "county": "Johnson"
+    "county": "Johnson",
+    "latitude": 38.9822,
+    "longitude": -94.6708
   },
   {
     "provider_id": "P002",
@@ -17,7 +19,9 @@
     "address2": "",
     "city": "Wichita",
     "zip_code": "67202",
-    "county": "Sedgwick"
+    "county": "Sedgwick",
+    "latitude": 37.6872,
+    "longitude": -97.3301
   },
   {
     "provider_id": "P003",
@@ -27,7 +31,9 @@
     "address2": "Building A",
     "city": "Kansas City",
     "zip_code": "66101",
-    "county": "Wyandotte"
+    "county": "Wyandotte",
+    "latitude": 39.1142,
+    "longitude": -94.6275
   },
   {
     "provider_id": "P004",
@@ -37,7 +43,9 @@
     "address2": "",
     "city": "Topeka",
     "zip_code": "66604",
-    "county": "Shawnee"
+    "county": "Shawnee",
+    "latitude": 39.0473,
+    "longitude": -95.6890
   },
   {
     "provider_id": "P005",
@@ -47,7 +55,9 @@
     "address2": "Floor 2",
     "city": "Lawrence",
     "zip_code": "66044",
-    "county": "Douglas"
+    "county": "Douglas",
+    "latitude": 38.9717,
+    "longitude": -95.2353
   },
   {
     "provider_id": "P006",
@@ -57,7 +67,9 @@
     "address2": "",
     "city": "Leavenworth",
     "zip_code": "66048",
-    "county": "Leavenworth"
+    "county": "Leavenworth",
+    "latitude": 39.3111,
+    "longitude": -94.9225
   },
   {
     "provider_id": "P007",
@@ -67,7 +79,9 @@
     "address2": "Suite 200",
     "city": "El Dorado",
     "zip_code": "67042",
-    "county": "Butler"
+    "county": "Butler",
+    "latitude": 37.8181,
+    "longitude": -96.8564
   },
   {
     "provider_id": "P008",
@@ -77,7 +91,9 @@
     "address2": "",
     "city": "Manhattan",
     "zip_code": "66502",
-    "county": "Riley"
+    "county": "Riley",
+    "latitude": 39.1836,
+    "longitude": -96.5717
   },
   {
     "provider_id": "P009",
@@ -87,7 +103,9 @@
     "address2": "Building B",
     "city": "Salina",
     "zip_code": "67401",
-    "county": "Saline"
+    "county": "Saline",
+    "latitude": 38.8403,
+    "longitude": -97.6114
   },
   {
     "provider_id": "P010",
@@ -97,7 +115,9 @@
     "address2": "",
     "city": "Hutchinson",
     "zip_code": "67501",
-    "county": "Reno"
+    "county": "Reno",
+    "latitude": 38.0608,
+    "longitude": -97.9297
   },
   {
     "provider_id": "P013",
@@ -107,7 +127,9 @@
     "address2": "Suite 150",
     "city": "Garden City",
     "zip_code": "67846",
-    "county": "Finney"
+    "county": "Finney",
+    "latitude": 37.9717,
+    "longitude": -100.8728
   },
   {
     "provider_id": "P020",
@@ -117,7 +139,9 @@
     "address2": "",
     "city": "Pittsburg",
     "zip_code": "66762",
-    "county": "Crawford"
+    "county": "Crawford",
+    "latitude": 37.4108,
+    "longitude": -94.7047
   },
   {
     "provider_id": "P024",
@@ -127,7 +151,9 @@
     "address2": "Floor 3",
     "city": "Emporia",
     "zip_code": "66801",
-    "county": "Lyon"
+    "county": "Lyon",
+    "latitude": 38.4039,
+    "longitude": -96.1817
   },
   {
     "provider_id": "P029",
@@ -137,7 +163,9 @@
     "address2": "",
     "city": "Liberal",
     "zip_code": "67901",
-    "county": "Seward"
+    "county": "Seward",
+    "latitude": 37.0431,
+    "longitude": -100.9210
   },
   {
     "provider_id": "P035",
@@ -147,7 +175,9 @@
     "address2": "Building C",
     "city": "Hays",
     "zip_code": "67601",
-    "county": "Ellis"
+    "county": "Ellis",
+    "latitude": 38.8792,
+    "longitude": -99.3267
   },
   {
     "provider_id": "P044",
@@ -157,7 +187,9 @@
     "address2": "",
     "city": "Dodge City",
     "zip_code": "67801",
-    "county": "Ford"
+    "county": "Ford",
+    "latitude": 37.7528,
+    "longitude": -100.0171
   },
   {
     "provider_id": "P021",
@@ -167,7 +199,9 @@
     "address2": "Suite 300",
     "city": "Overland Park",
     "zip_code": "66211",
-    "county": "Johnson"
+    "county": "Johnson",
+    "latitude": 38.9756,
+    "longitude": -94.6859
   },
   {
     "provider_id": "P022",
@@ -177,7 +211,9 @@
     "address2": "",
     "city": "Wichita",
     "zip_code": "67203",
-    "county": "Sedgwick"
+    "county": "Sedgwick",
+    "latitude": 37.6922,
+    "longitude": -97.3375
   },
   {
     "provider_id": "P023",
@@ -187,7 +223,9 @@
     "address2": "Floor 1",
     "city": "Kansas City",
     "zip_code": "66102",
-    "county": "Wyandotte"
+    "county": "Wyandotte",
+    "latitude": 39.1239,
+    "longitude": -94.6358
   },
   {
     "provider_id": "P025",
@@ -197,7 +235,9 @@
     "address2": "Cancer Center",
     "city": "Topeka",
     "zip_code": "66605",
-    "county": "Shawnee"
+    "county": "Shawnee",
+    "latitude": 39.0558,
+    "longitude": -95.6890
   },
   {
     "provider_id": "P026",
@@ -207,7 +247,9 @@
     "address2": "Imaging Suite",
     "city": "Lawrence",
     "zip_code": "66045",
-    "county": "Douglas"
+    "county": "Douglas",
+    "latitude": 38.9586,
+    "longitude": -95.2453
   },
   {
     "provider_id": "P027",
@@ -217,7 +259,9 @@
     "address2": "",
     "city": "Fort Leavenworth",
     "zip_code": "66027",
-    "county": "Leavenworth"
+    "county": "Leavenworth",
+    "latitude": 39.3444,
+    "longitude": -94.9169
   },
   {
     "provider_id": "P028",
@@ -227,7 +271,9 @@
     "address2": "Lab Building",
     "city": "Augusta",
     "zip_code": "67010",
-    "county": "Butler"
+    "county": "Butler",
+    "latitude": 37.6928,
+    "longitude": -96.9781
   },
   {
     "provider_id": "P030",
@@ -237,7 +283,9 @@
     "address2": "Suite 400",
     "city": "Junction City",
     "zip_code": "66441",
-    "county": "Geary"
+    "county": "Geary",
+    "latitude": 39.0289,
+    "longitude": -96.8317
   },
   {
     "provider_id": "P031",
@@ -247,7 +295,9 @@
     "address2": "",
     "city": "McPherson",
     "zip_code": "67460",
-    "county": "McPherson"
+    "county": "McPherson",
+    "latitude": 38.3706,
+    "longitude": -97.6642
   },
   {
     "provider_id": "P032",
@@ -257,7 +307,9 @@
     "address2": "Pulmonary Center",
     "city": "Great Bend",
     "zip_code": "67530",
-    "county": "Barton"
+    "county": "Barton",
+    "latitude": 38.3642,
+    "longitude": -98.8648
   },
   {
     "provider_id": "P033",
@@ -267,7 +319,9 @@
     "address2": "",
     "city": "Winfield",
     "zip_code": "67156",
-    "county": "Cowley"
+    "county": "Cowley",
+    "latitude": 37.2403,
+    "longitude": -96.9953
   },
   {
     "provider_id": "P034",
@@ -277,7 +331,9 @@
     "address2": "ID Clinic",
     "city": "Parsons",
     "zip_code": "67357",
-    "county": "Labette"
+    "county": "Labette",
+    "latitude": 37.3403,
+    "longitude": -95.2608
   },
   {
     "provider_id": "P036",
@@ -287,7 +343,9 @@
     "address2": "OR Complex",
     "city": "Derby",
     "zip_code": "67037",
-    "county": "Sedgwick"
+    "county": "Sedgwick",
+    "latitude": 37.5453,
+    "longitude": -97.2689
   },
   {
     "provider_id": "P037",
@@ -297,7 +355,9 @@
     "address2": "Cosmetic Center",
     "city": "Leawood",
     "zip_code": "66224",
-    "county": "Johnson"
+    "county": "Johnson",
+    "latitude": 38.9167,
+    "longitude": -94.6169
   },
   {
     "provider_id": "P038",
@@ -307,7 +367,9 @@
     "address2": "",
     "city": "Shawnee",
     "zip_code": "66218",
-    "county": "Johnson"
+    "county": "Johnson",
+    "latitude": 39.0228,
+    "longitude": -94.7200
   },
   {
     "provider_id": "P039",
@@ -317,7 +379,9 @@
     "address2": "GYN Suite",
     "city": "Olathe",
     "zip_code": "66061",
-    "county": "Johnson"
+    "county": "Johnson",
+    "latitude": 38.8814,
+    "longitude": -94.8191
   },
   {
     "provider_id": "P040",
@@ -327,7 +391,9 @@
     "address2": "OB Wing",
     "city": "Prairie Village",
     "zip_code": "66208",
-    "county": "Johnson"
+    "county": "Johnson",
+    "latitude": 38.9917,
+    "longitude": -94.6336
   },
   {
     "provider_id": "P041",
@@ -337,7 +403,9 @@
     "address2": "",
     "city": "Chanute",
     "zip_code": "66720",
-    "county": "Neosho"
+    "county": "Neosho",
+    "latitude": 37.6781,
+    "longitude": -95.4594
   },
   {
     "provider_id": "P042",
@@ -347,7 +415,9 @@
     "address2": "Suite 500",
     "city": "Ottawa",
     "zip_code": "66067",
-    "county": "Franklin"
+    "county": "Franklin",
+    "latitude": 38.6156,
+    "longitude": -95.2678
   },
   {
     "provider_id": "P043",
@@ -357,7 +427,9 @@
     "address2": "Athletic Center",
     "city": "Newton",
     "zip_code": "67114",
-    "county": "Harvey"
+    "county": "Harvey",
+    "latitude": 38.0467,
+    "longitude": -97.3450
   },
   {
     "provider_id": "P045",
@@ -367,7 +439,9 @@
     "address2": "Rehab Center",
     "city": "Arkansas City",
     "zip_code": "67005",
-    "county": "Cowley"
+    "county": "Cowley",
+    "latitude": 37.0617,
+    "longitude": -97.0364
   },
   {
     "provider_id": "P046",
@@ -377,7 +451,9 @@
     "address2": "",
     "city": "Independence",
     "zip_code": "67301",
-    "county": "Montgomery"
+    "county": "Montgomery",
+    "latitude": 37.2306,
+    "longitude": -95.7081
   },
   {
     "provider_id": "P047",
@@ -387,7 +463,9 @@
     "address2": "Senior Care",
     "city": "Coffeyville",
     "zip_code": "67337",
-    "county": "Montgomery"
+    "county": "Montgomery",
+    "latitude": 37.0372,
+    "longitude": -95.6158
   },
   {
     "provider_id": "P048",
@@ -397,7 +475,9 @@
     "address2": "Immunology Lab",
     "city": "Atchison",
     "zip_code": "66002",
-    "county": "Atchison"
+    "county": "Atchison",
+    "latitude": 39.5631,
+    "longitude": -95.1219
   },
   {
     "provider_id": "P049",
@@ -407,7 +487,9 @@
     "address2": "ICU",
     "city": "Fort Scott",
     "zip_code": "66701",
-    "county": "Bourbon"
+    "county": "Bourbon",
+    "latitude": 37.8428,
+    "longitude": -94.7081
   },
   {
     "provider_id": "P050",
@@ -417,6 +499,8 @@
     "address2": "Hospitalist Office",
     "city": "Iola",
     "zip_code": "66749",
-    "county": "Allen"
+    "county": "Allen",
+    "latitude": 37.9228,
+    "longitude": -95.3989
   }
 ]

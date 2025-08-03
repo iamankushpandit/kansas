@@ -28,19 +28,24 @@ func TestCalculateProviderDensity(t *testing.T) {
 }
 
 func TestCalculateProviderDensityMiles(t *testing.T) {
-	repo := &JSONRepository{}
+	repo := &JSONRepository{
+		countyAreas: []models.CountyArea{
+			{County: "TestCounty", AreaSqMiles: 700.0},
+		},
+	}
 	
 	tests := []struct {
 		providerCount int
+		county        string
 		expected      string
 	}{
-		{0, "No providers"},
-		{1000, "1.4/sq mi"},
-		{50, "~3.7 mi apart"},
+		{0, "TestCounty", "No providers"},
+		{1000, "TestCounty", "1.4/sq mi"},
+		{50, "TestCounty", "~3.7 mi apart"},
 	}
 	
 	for _, test := range tests {
-		result := repo.calculateProviderDensityMiles(test.providerCount)
+		result := repo.calculateProviderDensityMiles(test.providerCount, test.county)
 		assert.Equal(t, test.expected, result)
 	}
 }
