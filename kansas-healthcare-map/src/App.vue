@@ -440,7 +440,7 @@ export default {
         'Pathology': 'mdi-microscope',
         'Ophthalmology': 'mdi-eye',
         'Urology': 'mdi-human-male',
-        'Nephrology': 'mdi-kidney',
+        'Nephrology': 'mdi-water-outline',
         'Pulmonology': 'mdi-lungs',
         'Rheumatology': 'mdi-human-handsup',
         'Infectious Disease': 'mdi-virus',
