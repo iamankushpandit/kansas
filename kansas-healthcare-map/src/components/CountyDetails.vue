@@ -16,8 +16,9 @@
         />
         
         <SpecialtyDensityAnalysis 
-          v-if="specialtyDensityRecommendations.length > 0"
+          v-if="specialtyDensityAnalysis"
           :recommendations="specialtyDensityRecommendations"
+          :specialty-density-analysis="specialtyDensityAnalysis"
         />
       </v-card-text>
     </v-card>
@@ -41,7 +42,8 @@ export default {
     selectedCounty: Object,
     countyTerminatedAnalysis: Object,
     originalRecommendations: Array,
-    specialtyDensityRecommendations: Array
+    specialtyDensityRecommendations: Array,
+    specialtyDensityAnalysis: Object
   },
   methods: {
     getFipsCode(countyName) {

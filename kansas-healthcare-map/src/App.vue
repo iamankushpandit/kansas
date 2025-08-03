@@ -46,6 +46,7 @@
                   :county-terminated-analysis="countyTerminatedAnalysis"
                   :original-recommendations="originalRecommendations"
                   :specialty-density-recommendations="specialtyDensityRecommendations"
+                  :specialty-density-analysis="specialtyDensityAnalysis"
                 />
               </v-card-text>
             </v-card>

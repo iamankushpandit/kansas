@@ -2,37 +2,27 @@
   <section class="mt-3" aria-labelledby="specialty-density-title">
     <v-row>
       <v-col cols="12">
-          <h4 id="specialty-density-title" class="text-subtitle-2 text-primary">Specialty Density Analysis</h4>
-        <p class="text-caption mb-2">Provider specialties sorted by density (least to most dense)</p>
-        <div role="list" aria-label="Medical specialties ranked by provider density">
-          <v-row>
-            <v-col 
-              v-for="rec in recommendations" 
-              :key="rec.id" 
-              cols="6" 
-              class="py-1"
-              role="listitem"
+        <h4 id="specialty-density-title" class="text-subtitle-2 text-primary mb-3">Specialty Density Analysis</h4>
+        <v-data-table
+          :headers="headers"
+          :items="tableData"
+          :items-per-page="-1"
+          class="elevation-1"
+          density="compact"
+        >
+          <template v-slot:item.current_density="{ item }">
+            <span :class="getPriorityColor(item.gap)">{{ item.current_density }}</span>
+          </template>
+          <template v-slot:item.gap="{ item }">
+            <v-chip 
+              :color="getPriorityChipColor(item.gap)" 
+              size="small" 
+              variant="flat"
             >
-              <div 
-                class="d-flex align-center"
-                :aria-label="`${rec.title} specialty: ${rec.description}. Priority level: ${rec.priority}`"
-              >
-                <v-icon 
-                  :color="rec.priority === 'High' ? 'error' : rec.priority === 'Medium' ? 'warning' : 'success'" 
-                  size="small" 
-                  class="mr-2"
-                  :aria-label="`${rec.priority} priority indicator`"
-                >
-                  {{ rec.icon }}
-                </v-icon>
-                <div class="text-body-2">
-                  <span class="font-weight-medium">{{ rec.title }}</span>
-                  <span class="text-caption ml-1">{{ rec.description }}</span>
-                </div>
-              </div>
-            </v-col>
-          </v-row>
-        </div>
+              {{ item.gap > 0 ? `+${item.gap.toFixed(2)}` : item.gap.toFixed(2) }}
+            </v-chip>
+          </template>
+        </v-data-table>
       </v-col>
     </v-row>
   </section>
@@ -42,7 +32,40 @@
 export default {
   name: 'SpecialtyDensityAnalysis',
   props: {
-    recommendations: Array
+    recommendations: Array,
+    specialtyDensityAnalysis: Object
+  },
+  computed: {
+    headers() {
+      return [
+        { title: 'Specialty', key: 'specialty', sortable: true },
+        { title: 'Current Density', key: 'current_density', sortable: true },
+        { title: 'Recommended', key: 'recommended_density', sortable: true },
+        { title: 'Gap', key: 'gap', sortable: true }
+      ]
+    },
+    tableData() {
+      if (!this.specialtyDensityAnalysis?.specialty_densities) return []
+      
+      return this.specialtyDensityAnalysis.specialty_densities.map(item => ({
+        specialty: item.name,
+        current_density: item.count === 0 ? 'No providers' : `${(item.count / 700).toFixed(3)}/sq mi`,
+        recommended_density: `${(item.recommended || 0).toFixed(2)}/sq mi`,
+        gap: item.gap || 0
+      }))
+    }
+  },
+  methods: {
+    getPriorityColor(gap) {
+      if (gap > 1.0) return 'text-error'
+      if (gap > 0.3) return 'text-warning'
+      return 'text-success'
+    },
+    getPriorityChipColor(gap) {
+      if (gap > 1.0) return 'error'
+      if (gap > 0.3) return 'warning'
+      return 'success'
+    }
   }
 }
 </script>

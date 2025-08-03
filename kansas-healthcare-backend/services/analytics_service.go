@@ -223,9 +223,10 @@ func (s *AnalyticsService) GetSpecialtyDensityAnalysis(county string) (map[strin
 
 	// Convert to sorted list by gap (actual vs recommended)
 	type SpecialtyDensity struct {
-		Name  string  `json:"name"`
-		Count int     `json:"count"`
-		Gap   float64 `json:"gap"`
+		Name        string  `json:"name"`
+		Count       int     `json:"count"`
+		Gap         float64 `json:"gap"`
+		Recommended float64 `json:"recommended"`
 	}
 
 	var densities []SpecialtyDensity
@@ -235,9 +236,10 @@ func (s *AnalyticsService) GetSpecialtyDensityAnalysis(county string) (map[strin
 		gap := recommendedDensity - actualDensity
 		
 		densities = append(densities, SpecialtyDensity{
-			Name:  specialty,
-			Count: actualCount,
-			Gap:   gap,
+			Name:        specialty,
+			Count:       actualCount,
+			Gap:         gap,
+			Recommended: recommendedDensity,
 		})
 	}
 
