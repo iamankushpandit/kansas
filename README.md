@@ -7,35 +7,43 @@ A comprehensive full-stack web application for analyzing healthcare provider net
 See the Kansas Healthcare Analytics Platform in action:
 
 ### Interactive Kansas County Map
-![Kansas Map with Provider Data](kansas-healthcare-backend/screenshots/MapOutput.png)
+![Kansas Map with Provider Data](screenshots/MapOutput.png)
 *Interactive Highcharts-powered map showing provider density across Kansas counties with real-time filtering*
 
 ### County-Specific Analytics Dashboard
-![County Insights and Metrics](kansas-healthcare-backend/screenshots/CountyInsights.png)
+![County Insights and Metrics](screenshots/CountyInsights.png)
 *Detailed county analytics with provider counts, claims data, and network coverage metrics*
 
 ### Advanced Control Panel
-![Map Controls and Filters](kansas-healthcare-backend/screenshots/MapControl.png)
+![Map Controls and Filters](screenshots/MapControl.png)
 *Comprehensive filtering system for specialty, network type, and metric selection*
 
 ### Actionable Healthcare Recommendations
-![Strategic Recommendations](kansas-healthcare-backend/screenshots/ActionableRecommendations.png)
+![Strategic Recommendations](screenshots/ActionableRecommendations.png)
 *AI-driven recommendations for network expansion and provider recruitment*
 
 ### Specialty Density Analysis
-![Density-Based Recommendations](kansas-healthcare-backend/screenshots/RecommendationsBasedOnDensity.png)
+![Density-Based Recommendations](screenshots/RecommendationsBasedOnDensity.png)
 *Provider specialty distribution analysis with geographic accessibility metrics*
 
 ### Statewide Network Analytics
-![Network Metrics Overview](kansas-healthcare-backend/screenshots/StateWideMetrics.png)
+![Network Metrics Overview](screenshots/StateWideMetrics.png)
 *Comprehensive network stability metrics and termination analysis*
 
 ### Data Quality Monitoring
-![Missing Data Alerts](kansas-healthcare-backend/screenshots/NotificationOfMissingData.png)
+![Missing Data Alerts](screenshots/NotificationOfMissingData.png)
 *Real-time alerts for data gaps and missing county information*
 
+### PDF Export Functionality
+![PDF Export Feature](screenshots/PdfExporting.png)
+*Professional PDF report generation with county-specific healthcare recommendations*
+
+### Light/Dark Theme Toggle
+![Theme Switching](screenshots/LighDarkTheme.png)
+*Accessible theme switching for different user preferences and environments*
+
 ### Complete Application Interface
-![Full Application View](kansas-healthcare-backend/screenshots/ToolOutput.png)
+![Full Application View](screenshots/ToolOutput.png)
 *Complete healthcare analytics platform with all components integrated*
 
 ## 🚀 Quick Start (One-Click Demo)
@@ -299,11 +307,11 @@ App.vue (Main Container)
 - **Monitoring**: Health check endpoints for 99.9% uptime SLA
 
 ### Healthcare Development Environment
-- **Node.js**: Version 18+ (LTS for enterprise healthcare stability)
+- **Node.js**: Version 20+ (LTS for enterprise healthcare stability)
 - **Go**: Version 1.21+ (Latest security patches for healthcare data protection)
 - **Git**: Version control with healthcare audit trail support
 - **IDE**: VS Code with Go/Vue extensions for healthcare development productivity
-- **Testing**: Jest + Go testing framework for healthcare quality assurance
+- **Testing**: Vitest + Go testing framework for healthcare quality assurance
 
 ## 🚀 Quick Start
 
@@ -331,7 +339,7 @@ sudo usermod -aG docker $USER
 
 #### Option 2: Manual Development Setup
 **Windows:**
-1. Install [Node.js 18+](https://nodejs.org/en/download/) (includes npm)
+1. Install [Node.js 20+](https://nodejs.org/en/download/) (includes npm)
 2. Install [Go 1.21+](https://golang.org/dl/)
 3. Install [Git for Windows](https://git-scm.com/download/win)
 4. Install [Visual Studio Code](https://code.visualstudio.com/) (optional)
@@ -340,7 +348,7 @@ sudo usermod -aG docker $USER
 1. Install [Homebrew](https://brew.sh/): `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 2. Install dependencies:
    ```bash
-   brew install node@18 go git
+   brew install node@20 go git
    ```
 3. Install [Visual Studio Code](https://code.visualstudio.com/) (optional)
 
@@ -351,7 +359,7 @@ sudo apt update
 sudo apt install nodejs npm golang-go git
 
 # Verify versions
-node --version  # Should be 18+
+node --version  # Should be 20+
 go version     # Should be 1.21+
 ```
 
@@ -361,27 +369,27 @@ go version     # Should be 1.21+
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd kansas-healthcare-network
+cd kansas
 
 # Start the application
 docker-compose up --build
 
 # Access the application
-# Windows/Linux: http://localhost
-# macOS: http://localhost
+# Frontend: http://localhost:4192
+# Backend API: http://localhost:3247
 ```
 
 #### Manual Development Setup
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd kansas-healthcare-network
+cd kansas
 
 # Backend setup (Terminal 1)
 cd kansas-healthcare-backend
 go mod download
 go run main.go
-# Backend will run on http://localhost:8080
+# Backend will run on http://localhost:3247
 
 # Frontend setup (Terminal 2 - new terminal window)
 cd kansas-healthcare-map
@@ -391,9 +399,9 @@ npm run dev
 ```
 
 ### Verification Steps
-1. **Docker**: Navigate to `http://localhost` - you should see the Kansas Healthcare map
+1. **Docker**: Navigate to `http://localhost:4192` - you should see the Kansas Healthcare map
 2. **Manual**: Navigate to `http://localhost:5173` - you should see the application
-3. **API Test**: Visit `http://localhost:8080/health` - should return `{"status":"healthy"}`
+3. **API Test**: Visit `http://localhost:3247/health` - should return `{"status":"healthy"}`
 
 ### Troubleshooting
 
@@ -403,7 +411,8 @@ npm run dev
 - Linux: Check `sudo systemctl status docker`
 
 **Port Conflicts:**
-- If port 80 is busy: `docker-compose up --build -p 8080:80`
+- If port 4192 is busy: Change port mapping in `docker-compose.yml`
+- If port 3247 is busy: Change port mapping in `docker-compose.yml`
 - If port 5173 is busy: Change port in `vite.config.js`
 
 **Permission Issues (Linux):**
