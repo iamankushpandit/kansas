@@ -20,7 +20,7 @@ See the Kansas Healthcare Analytics Platform in action:
 
 ### Actionable Healthcare Recommendations
 ![Strategic Recommendations](kansas-healthcare-backend/screenshots/ActionableRecommendations.png)
-*AI-driven recommendations for network expansion and provider recruitment*
+*Data driven recommendations for network expansion and provider recruitment*
 
 ### Specialty Density Analysis
 ![Density-Based Recommendations](kansas-healthcare-backend/screenshots/RecommendationsBasedOnDensity.png)
