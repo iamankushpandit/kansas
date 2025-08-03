@@ -38,9 +38,9 @@ export default {
   computed: {
     headers() {
       return [
-        { title: 'Specialty', key: 'specialty', sortable: true },
-        { title: 'Current Density', key: 'current_density', sortable: true },
-        { title: 'Recommended', key: 'recommended_density', sortable: true },
+        { title: 'Specialty', key: 'specialty', sortable: false },
+        { title: 'Current Density', key: 'current_density', sortable: false },
+        { title: 'Recommended', key: 'recommended_density', sortable: false },
         { title: 'Gap', key: 'gap', sortable: true }
       ]
     },
