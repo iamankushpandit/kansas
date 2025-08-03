@@ -18,15 +18,35 @@ if ($args -contains "--test" -or $args -contains "-t") {
     exit 0
 }
 
-# Check Docker
-Write-Host "Checking Docker..." -ForegroundColor Cyan
+# Check and install Docker Desktop if needed
+Write-Host "Checking Docker Desktop..." -ForegroundColor Cyan
 try {
     docker --version | Out-Null
     Write-Host "[OK] Docker is available" -ForegroundColor Green
 } catch {
-    Write-Host "[ERROR] Docker not found. Please install Docker Desktop first." -ForegroundColor Red
-    Read-Host "Press Enter to exit"
-    exit 1
+    Write-Host "[INFO] Docker Desktop not found. Installing automatically..." -ForegroundColor Yellow
+    
+    # Download Docker Desktop installer
+    $dockerUrl = "https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe"
+    $dockerInstaller = "$env:TEMP\DockerDesktopInstaller.exe"
+    
+    Write-Host "[INFO] Downloading Docker Desktop (this may take a few minutes)..." -ForegroundColor Cyan
+    try {
+        Invoke-WebRequest -Uri $dockerUrl -OutFile $dockerInstaller -UseBasicParsing
+        Write-Host "[INFO] Installing Docker Desktop silently..." -ForegroundColor Cyan
+        Start-Process -FilePath $dockerInstaller -ArgumentList "install", "--quiet", "--accept-license" -Wait
+        Remove-Item $dockerInstaller -Force
+        
+        Write-Host "[SUCCESS] Docker Desktop installed successfully!" -ForegroundColor Green
+        Write-Host "[INFO] Please restart your computer and run this script again." -ForegroundColor Yellow
+        Read-Host "Press Enter to exit"
+        exit 0
+    } catch {
+        Write-Host "[ERROR] Failed to install Docker Desktop automatically." -ForegroundColor Red
+        Write-Host "[INFO] Please download and install Docker Desktop manually from: https://www.docker.com/products/docker-desktop" -ForegroundColor Yellow
+        Read-Host "Press Enter to exit"
+        exit 1
+    }
 }
 
 # Check if Docker is running
@@ -35,9 +55,42 @@ try {
     docker ps | Out-Null
     Write-Host "[OK] Docker is running" -ForegroundColor Green
 } catch {
-    Write-Host "[ERROR] Docker is not running. Please start Docker Desktop." -ForegroundColor Red
-    Read-Host "Press Enter to exit"
-    exit 1
+    Write-Host "[INFO] Docker Desktop is not running. Starting it..." -ForegroundColor Yellow
+    
+    # Try to start Docker Desktop
+    $dockerPath = "$env:ProgramFiles\Docker\Docker\Docker Desktop.exe"
+    if (Test-Path $dockerPath) {
+        Start-Process -FilePath $dockerPath
+        Write-Host "[INFO] Waiting for Docker Desktop to start (30 seconds)..." -ForegroundColor Cyan
+        
+        # Wait up to 60 seconds for Docker to start
+        $timeout = 60
+        $elapsed = 0
+        while ($elapsed -lt $timeout) {
+            Start-Sleep -Seconds 5
+            $elapsed += 5
+            try {
+                docker ps | Out-Null
+                Write-Host "[OK] Docker is now running" -ForegroundColor Green
+                break
+            } catch {
+                Write-Host "[INFO] Still waiting for Docker... ($elapsed/$timeout seconds)" -ForegroundColor Cyan
+            }
+        }
+        
+        # Final check
+        try {
+            docker ps | Out-Null
+        } catch {
+            Write-Host "[ERROR] Docker failed to start. Please start Docker Desktop manually." -ForegroundColor Red
+            Read-Host "Press Enter to exit"
+            exit 1
+        }
+    } else {
+        Write-Host "[ERROR] Docker Desktop not found. Please install it manually." -ForegroundColor Red
+        Read-Host "Press Enter to exit"
+        exit 1
+    }
 }
 
 # Navigate to script directory
@@ -62,15 +115,7 @@ if ($LASTEXITCODE -ne 0) {
     exit 1
 }
 
-# Extract actual coverage percentage
-$coverageMatch = $frontendOutput | Select-String "All files.*?(\d+\.\d+)"
-if ($coverageMatch) {
-    $actualCoverage = [double]$coverageMatch.Matches[0].Groups[1].Value
-    Write-Host "[OK] Frontend tests passed - coverage: $actualCoverage%" -ForegroundColor Green
-} else {
-    Write-Host "[OK] Frontend tests passed" -ForegroundColor Green
-    $actualCoverage = 0
-}
+Write-Host "[OK] Frontend tests passed" -ForegroundColor Green
 Set-Location ".."
 
 # Run backend tests
@@ -84,29 +129,13 @@ if ($LASTEXITCODE -ne 0) {
     exit 1
 }
 
-# Extract backend coverage (simplified check)
-$backendCoverageMatch = $backendOutput | Select-String "coverage: (\d+\.\d+)%"
-if ($backendCoverageMatch) {
-    $backendCoverage = [double]$backendCoverageMatch.Matches[0].Groups[1].Value
-    Write-Host "[OK] Backend tests passed - coverage: $backendCoverage%" -ForegroundColor Green
-} else {
-    Write-Host "[OK] Backend tests passed" -ForegroundColor Green
-    $backendCoverage = 0
-}
+Write-Host "[OK] Backend tests passed" -ForegroundColor Green
 Set-Location ".."
 
 Write-Host ""
-Write-Host "Test Coverage Summary:" -ForegroundColor Yellow
-if ($actualCoverage -gt 0) {
-    Write-Host "[COVERAGE] Frontend: $actualCoverage% code coverage" -ForegroundColor Green
-} else {
-    Write-Host "[COVERAGE] Frontend: Tests passed" -ForegroundColor Green
-}
-if ($backendCoverage -gt 0) {
-    Write-Host "[COVERAGE] Backend: $backendCoverage% code coverage" -ForegroundColor Green
-} else {
-    Write-Host "[COVERAGE] Backend: Tests passed" -ForegroundColor Green
-}
+Write-Host "Test Summary:" -ForegroundColor Yellow
+Write-Host "[TESTS] Frontend: Passed" -ForegroundColor Green
+Write-Host "[TESTS] Backend: Passed" -ForegroundColor Green
 Write-Host ""
 Write-Host "Starting the healthcare platform..." -ForegroundColor Green
 Write-Host ""

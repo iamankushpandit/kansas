@@ -19,7 +19,7 @@ See the Kansas Healthcare Analytics Platform in action:
 *Comprehensive filtering system for specialty, network type, and metric selection*
 
 ### Actionable Healthcare Recommendations
-![Strategic Recommendations](kansas-healthcare-backend/screenshots/ActionableRecommendations.png)
+![Strategic Recommendations](screenshots/ActionableRecommendations.png)
 *Data driven recommendations for network expansion and provider recruitment*
 
 ### Specialty Density Analysis
@@ -48,20 +48,27 @@ See the Kansas Healthcare Analytics Platform in action:
 
 ## 🚀 Quick Start (One-Click Demo)
 
-### For Windows Users (Recommended)
+### For Windows Users
 1. **Download** this project folder
 2. **Run** `./setup-demo.ps1` in PowerShell
 3. **Wait 3-5 minutes** for automatic setup
 4. **Application opens** at http://localhost:4192
 
+### For Mac Users
+1. **Download** this project folder
+2. **Run** `./setup-demo.sh` in Terminal
+3. **Wait 3-5 minutes** for automatic setup
+4. **Application opens** at http://localhost:4192
+
 ### Requirements
-- Windows 10/11
-- Docker Desktop (script will check and guide you if missing)
+- **Windows**: Windows 10/11
+- **Mac**: macOS 10.15+ (Catalina or later)
+- Internet connection (for automatic dependency installation)
 - 4GB RAM available
 
 ### What It Does
+- ✅ Automatically installs Homebrew (Mac) or Docker Desktop if missing
 - ✅ Runs automated tests (frontend + backend)
-- ✅ Checks Docker installation
 - ✅ Builds healthcare analytics platform
 - ✅ Opens browser automatically
 - ✅ Ready for demo in minutes
