@@ -94,9 +94,9 @@
             <v-card variant="outlined" class="mt-4">
               <v-card-text class="text-caption text-center">
                 <v-icon size="small" class="mr-1">mdi-information-outline</v-icon>
-                <strong>Distance Calculation Methodology:</strong> Provider distances are calculated using GPS coordinates and the Haversine formula for precise geographic measurements. 
-                Urban areas show density as "providers/sq mi" while rural areas display average distance between providers (e.g., "~8.2 mi apart"). 
-                This provides realistic accessibility metrics for healthcare network planning.
+                <strong>Specialty Density & Distance Methodology:</strong> Specialties are ranked by gap between actual and recommended provider density per square mile. 
+                Provider distances use GPS coordinates and Haversine formula for precise geographic measurements. 
+                Urban areas show "providers/sq mi" while rural areas show "~X mi apart" between providers.
               </v-card-text>
             </v-card>
           </v-col>
@@ -417,9 +417,10 @@ export default {
         const densityValue = this.calculateSpecialtyDensityMiles(specialty.count)
         let priority = 'Low'
         
-        if (index < 3) {
+        // Priority based on gap - higher gap = higher priority
+        if (specialty.gap > 1.0) {
           priority = 'High'
-        } else if (index < 6) {
+        } else if (specialty.gap > 0.3) {
           priority = 'Medium'
         }
 

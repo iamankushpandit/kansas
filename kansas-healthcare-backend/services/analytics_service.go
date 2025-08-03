@@ -215,21 +215,36 @@ func (s *AnalyticsService) GetSpecialtyDensityAnalysis(county string) (map[strin
 		}
 	}
 
-	// Convert to sorted list (least to most dense)
+	// Get county area for density calculation
+	countyArea := s.repo.GetCountyArea(county)
+
+	// Get specialty density standards
+	standards := s.repo.GetSpecialtyDensityStandards()
+
+	// Convert to sorted list by gap (actual vs recommended)
 	type SpecialtyDensity struct {
-		Name  string `json:"name"`
-		Count int    `json:"count"`
+		Name  string  `json:"name"`
+		Count int     `json:"count"`
+		Gap   float64 `json:"gap"`
 	}
 
 	var densities []SpecialtyDensity
-	for specialty, count := range specialtyCounts {
-		densities = append(densities, SpecialtyDensity{Name: specialty, Count: count})
+	for specialty, recommendedDensity := range standards {
+		actualCount := specialtyCounts[specialty]
+		actualDensity := float64(actualCount) / countyArea
+		gap := recommendedDensity - actualDensity
+		
+		densities = append(densities, SpecialtyDensity{
+			Name:  specialty,
+			Count: actualCount,
+			Gap:   gap,
+		})
 	}
 
-	// Sort by count (ascending - least dense first)
+	// Sort by gap (descending - highest gap first)
 	for i := 0; i < len(densities)-1; i++ {
 		for j := i + 1; j < len(densities); j++ {
-			if densities[i].Count > densities[j].Count {
+			if densities[i].Gap < densities[j].Gap {
 				densities[i], densities[j] = densities[j], densities[i]
 			}
 		}

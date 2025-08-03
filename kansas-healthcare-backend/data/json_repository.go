@@ -17,6 +17,7 @@ type JSONRepository struct {
 	providerServiceLocations []models.ProviderServiceLocation
 	countyClaims             []models.CountyClaims
 	countyAreas              []models.CountyArea
+	specialtyDensityStandards map[string]float64
 }
 
 func NewJSONRepository() *JSONRepository {
@@ -31,6 +32,7 @@ func (r *JSONRepository) loadData() {
 	r.loadProviderServiceLocations()
 	r.loadCountyClaims()
 	r.loadCountyAreas()
+	r.loadSpecialtyDensityStandards()
 }
 
 func (r *JSONRepository) loadProviders() {
@@ -80,6 +82,16 @@ func (r *JSONRepository) loadCountyAreas() {
 	}
 	if err := json.Unmarshal(file, &r.countyAreas); err != nil {
 		log.Fatal("Error parsing county_areas.json:", err)
+	}
+}
+
+func (r *JSONRepository) loadSpecialtyDensityStandards() {
+	file, err := ioutil.ReadFile("data/specialty_density_standards.json")
+	if err != nil {
+		log.Fatal("Required file data/specialty_density_standards.json not found:", err)
+	}
+	if err := json.Unmarshal(file, &r.specialtyDensityStandards); err != nil {
+		log.Fatal("Error parsing specialty_density_standards.json:", err)
 	}
 }
 
@@ -195,6 +207,14 @@ func (r *JSONRepository) getCountyArea(county string) float64 {
 	}
 	// Fallback to average if county not found
 	return 700.0
+}
+
+func (r *JSONRepository) GetCountyArea(county string) float64 {
+	return r.getCountyArea(county)
+}
+
+func (r *JSONRepository) GetSpecialtyDensityStandards() map[string]float64 {
+	return r.specialtyDensityStandards
 }
 
 func (r *JSONRepository) GetCountyStats() ([]models.CountyStats, error) {

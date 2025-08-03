@@ -15,4 +15,6 @@ type Repository interface {
 	GetProvidersInCounty(county string) ([]models.Provider, error)
 	GetRadiusAnalysis(county string, radius int, networkId string) (map[string]interface{}, error)
 	GetCountyTerminatedNetworkCount(county, networkId string) (int, int, error)
+	GetCountyArea(county string) float64
+	GetSpecialtyDensityStandards() map[string]float64
 }
