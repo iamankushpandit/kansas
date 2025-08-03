@@ -2,6 +2,42 @@
 
 A comprehensive full-stack web application for analyzing healthcare provider networks across Kansas counties, providing data-driven insights for network optimization and strategic planning.
 
+## 📸 Visual Overview
+
+See the Kansas Healthcare Analytics Platform in action:
+
+### Interactive Kansas County Map
+![Kansas Map with Provider Data](kansas-healthcare-backend/screenshots/MapOutput.png)
+*Interactive Highcharts-powered map showing provider density across Kansas counties with real-time filtering*
+
+### County-Specific Analytics Dashboard
+![County Insights and Metrics](kansas-healthcare-backend/screenshots/CountyInsights.png)
+*Detailed county analytics with provider counts, claims data, and network coverage metrics*
+
+### Advanced Control Panel
+![Map Controls and Filters](kansas-healthcare-backend/screenshots/MapControl.png)
+*Comprehensive filtering system for specialty, network type, and metric selection*
+
+### Actionable Healthcare Recommendations
+![Strategic Recommendations](kansas-healthcare-backend/screenshots/ActionableRecommendations.png)
+*AI-driven recommendations for network expansion and provider recruitment*
+
+### Specialty Density Analysis
+![Density-Based Recommendations](kansas-healthcare-backend/screenshots/RecommendationsBasedOnDensity.png)
+*Provider specialty distribution analysis with geographic accessibility metrics*
+
+### Statewide Network Analytics
+![Network Metrics Overview](kansas-healthcare-backend/screenshots/StateWideMetrics.png)
+*Comprehensive network stability metrics and termination analysis*
+
+### Data Quality Monitoring
+![Missing Data Alerts](kansas-healthcare-backend/screenshots/NotificationOfMissingData.png)
+*Real-time alerts for data gaps and missing county information*
+
+### Complete Application Interface
+![Full Application View](kansas-healthcare-backend/screenshots/ToolOutput.png)
+*Complete healthcare analytics platform with all components integrated*
+
 ## 🚀 Quick Start (One-Click Demo)
 
 ### For Windows Users (Recommended)
