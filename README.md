@@ -19,8 +19,8 @@ See the Kansas Healthcare Analytics Platform in action:
 *Comprehensive filtering system for specialty, network type, and metric selection*
 
 ### Actionable Healthcare Recommendations
-![Strategic Recommendations](screenshots/ActionableRecommendations.png)
-*AI-driven recommendations for network expansion and provider recruitment*
+![Strategic Recommendations](kansas-healthcare-backend/screenshots/ActionableRecommendations.png)
+*Data driven recommendations for network expansion and provider recruitment*
 
 ### Specialty Density Analysis
 ![Density-Based Recommendations](screenshots/RecommendationsBasedOnDensity.png)
