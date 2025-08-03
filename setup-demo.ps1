@@ -14,6 +14,8 @@ if ($args -contains "--test" -or $args -contains "-t") {
     
     npm run test:coverage
     Write-Host "[SUCCESS] Tests completed! Coverage report in coverage/index.html" -ForegroundColor Green
+    Write-Host "[INFO] Cleaning up Docker containers..." -ForegroundColor Yellow
+    docker-compose down 2>$null
     Read-Host "Press Enter to exit"
     exit 0
 }
@@ -111,6 +113,8 @@ $frontendOutput = npm run test:run -- --coverage --reporter=verbose 2>&1
 Write-Host $frontendOutput
 if ($LASTEXITCODE -ne 0) {
     Write-Host "[ERROR] Frontend tests failed!" -ForegroundColor Red
+    Write-Host "[INFO] Cleaning up Docker containers..." -ForegroundColor Yellow
+    docker-compose down 2>$null
     Read-Host "Press Enter to exit"
     exit 1
 }
@@ -125,6 +129,8 @@ $backendOutput = go test ./... -cover -v 2>&1
 Write-Host $backendOutput
 if ($LASTEXITCODE -ne 0) {
     Write-Host "[ERROR] Backend tests failed!" -ForegroundColor Red
+    Write-Host "[INFO] Cleaning up Docker containers..." -ForegroundColor Yellow
+    docker-compose down 2>$null
     Read-Host "Press Enter to exit"
     exit 1
 }
@@ -167,9 +173,32 @@ Write-Host ""
 Write-Host "Frontend: http://localhost:4192" -ForegroundColor Cyan
 Write-Host "Backend: http://localhost:3247" -ForegroundColor Cyan
 Write-Host ""
-Write-Host "Waiting 7 seconds then opening browser..." -ForegroundColor Yellow
+Write-Host "Preparing to launch browser..." -ForegroundColor Yellow
+Write-Host ""
 
-Start-Sleep -Seconds 7
+# 10-second countdown with ASCII rocket
+for ($i = 10; $i -ge 1; $i--) {
+    Clear-Host
+    Write-Host "    ^    " -ForegroundColor Cyan
+    Write-Host "   /|\   " -ForegroundColor Cyan
+    Write-Host "  / | \  " -ForegroundColor Cyan
+    Write-Host " |  |  | " -ForegroundColor Cyan
+    Write-Host " |  |  | " -ForegroundColor Cyan
+    Write-Host " |_____| Launch in $i seconds..." -ForegroundColor Yellow
+    Write-Host "  \___/  " -ForegroundColor Cyan
+    Write-Host ""
+    Start-Sleep -Seconds 1
+}
+
+Clear-Host
+Write-Host "    ^    " -ForegroundColor Green
+Write-Host "   /|\   " -ForegroundColor Green
+Write-Host "  / | \  " -ForegroundColor Green
+Write-Host " |  |  | " -ForegroundColor Green
+Write-Host " |  |  | " -ForegroundColor Green
+Write-Host " |_____| LIFTOFF!" -ForegroundColor Red
+Write-Host "  \___/  " -ForegroundColor Green
+Write-Host ""
 Start-Process "http://localhost:4192"
 
 Write-Host ""
@@ -178,3 +207,5 @@ Write-Host "[INFO] To stop: run 'docker-compose down'" -ForegroundColor Yellow
 Write-Host "[INFO] To run tests: .\setup-demo.ps1 --test" -ForegroundColor Cyan
 
 Read-Host "Press Enter to exit"
+Write-Host "[INFO] Cleaning up Docker containers..." -ForegroundColor Yellow
+docker-compose down 2>$null

@@ -16,6 +16,8 @@ if [[ "$1" == "--test" || "$1" == "-t" ]]; then
     
     npm run test:coverage
     echo "[SUCCESS] Tests completed! Coverage report in coverage/index.html"
+    echo "[INFO] Cleaning up Docker containers..."
+    docker-compose down 2>/dev/null
     read -p "Press Enter to exit"
     exit 0
 fi
@@ -105,6 +107,8 @@ fi
 npm run test:run -- --coverage --reporter=verbose
 if [ $? -ne 0 ]; then
     echo "[ERROR] Frontend tests failed!"
+    echo "[INFO] Cleaning up Docker containers..."
+    docker-compose down 2>/dev/null
     read -p "Press Enter to exit"
     exit 1
 fi
@@ -117,6 +121,8 @@ cd kansas-healthcare-backend
 go test ./... -cover -v
 if [ $? -ne 0 ]; then
     echo "[ERROR] Backend tests failed!"
+    echo "[INFO] Cleaning up Docker containers..."
+    docker-compose down 2>/dev/null
     read -p "Press Enter to exit"
     exit 1
 fi
@@ -158,9 +164,31 @@ echo ""
 echo "Frontend: http://localhost:4192"
 echo "Backend: http://localhost:3247"
 echo ""
-echo "Waiting 7 seconds then opening browser..."
+echo "Preparing to launch browser..."
+echo ""
 
-sleep 7
+# 10-second countdown with ASCII rocket
+for i in {10..1}; do
+    echo "    ^    "
+    echo "   /|\   "
+    echo "  / | \  "
+    echo " |  |  | "
+    echo " |  |  | "
+    echo " |_____| Launch in $i seconds..."
+    echo "  \___/  "
+    echo ""
+    sleep 1
+    clear
+done
+
+echo "    ^    "
+echo "   /|\   "
+echo "  / | \  "
+ echo " |  |  | "
+echo " |  |  | "
+echo " |_____| LIFTOFF!"
+echo "  \___/  "
+echo ""
 open "http://localhost:4192"
 
 echo ""
@@ -169,3 +197,5 @@ echo "[INFO] To stop: run 'docker-compose down'"
 echo "[INFO] To run tests: ./setup-demo.sh --test"
 
 read -p "Press Enter to exit"
+echo "[INFO] Cleaning up Docker containers..."
+docker-compose down 2>/dev/null
